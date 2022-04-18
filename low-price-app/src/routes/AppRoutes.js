@@ -1,8 +1,11 @@
 import React from 'react'
+import Add from '../components/Add'
 
 const AppRoutes = () => {
   return (
-    <div>AppRoutes</div>
+    <div>
+      <Add/>
+    </div>
   )
 }
 
