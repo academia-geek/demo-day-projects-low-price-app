@@ -59,7 +59,7 @@ const Add = () => {
                     <Form.Control type="text" name="codigo" placeholder="El codigo contine dos letras y 3 numeros" value={codigo} onChange={handleInputChange} />
 
                     <Form.Label>Ubicacion</Form.Label>
-                    <Form.Control type="text" name="ubicacion" placeholder="Tipo" value={ubicacion} onChange={handleInputChange} />
+                    <Form.Control type="text" name="ubicacion" placeholder="Ubicacion de la estacion" value={ubicacion} onChange={handleInputChange} />
 
                     <Form.Label>Precio</Form.Label>
                     <Form.Control type="text" name="precio" placeholder="El precio en Pesos Colomb iano" value={precio} onChange={handleInputChange} />
@@ -71,9 +71,8 @@ const Add = () => {
                 </Form.Group>
 
                 <Button type="submit">
-                    <Image width={40} src='https://res.cloudinary.com/danimel/image/upload/v1646016294/anadir_eitgpy.png' />
+                    <Image width={25} src='https://res.cloudinary.com/dsocuaabs/image/upload/v1650321111/LowPriceApp/se6gs04q0psntqtuz9k6.png' />
                 </Button>
-             
             </Form>
 
             <List/>

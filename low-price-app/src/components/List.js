@@ -55,9 +55,8 @@ const List = () => {
                 <td>{p.ubicacion}</td>
                 <td>{p.precio}</td>
                 <td>
-                  <Button margin={10} onClick={() => dispatch(deleteAsync(p.codigo))}> <Image onClick={() => dispatch(deleteAsync(p.codigo))} width={20} src='https://res.cloudinary.com/danimel/image/upload/v1646015682/trash_2_vcdean.png' /> </Button>
-
-                  <Button margin={10} onClick={() => editar(p.codigo)}> <Image onClick={() => editar(p.codigo)} width={20} src='https://res.cloudinary.com/danimel/image/upload/v1646015685/edit_nh7sll.png' /></Button>
+                  <Button margin={10} onClick={() => dispatch(deleteAsync(p.codigo))}> <Image onClick={() => dispatch(deleteAsync(p.codigo))} width={20} src='https://res.cloudinary.com/dsocuaabs/image/upload/v1650321093/LowPriceApp/km9fp6fuzekmbgpddkjp.png' /> </Button>
+                  <Button margin={10} onClick={() => editar(p.codigo)}> <Image onClick={() => editar(p.codigo)} width={20} src='https://res.cloudinary.com/dsocuaabs/image/upload/v1650321139/LowPriceApp/r3jxvhpvcp3hysnrpepp.png' /></Button>
                 </td>
 
               </tr>
