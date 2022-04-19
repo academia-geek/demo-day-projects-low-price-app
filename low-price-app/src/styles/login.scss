@@ -1,0 +1,60 @@
+.formulario {
+    background-color: rgb(190, 190, 190);
+    color: black;
+    margin: 1.5rem auto;
+    width: 50vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid grey;
+    padding: 2rem;
+    border-radius: 15px;
+    h2{
+        margin-bottom: 2rem ;
+    }
+    input{
+        
+        border-radius: 1000px;
+    }
+    div {
+        color: red;
+        font-style: italic;
+    }
+    button {
+        margin: 0 auto;
+        width: 90%;
+        background-color: black;
+        border: 3px solid black ;
+        border-radius: 1000px;
+        color: white;
+        cursor: pointer;
+        margin-top: 2rem;
+        &:hover{
+            color: black;
+            background-color: white;
+        }
+    }
+}
+
+.btnCont {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    width: 100%;
+
+    button {
+        margin: 1rem 0;
+        width: 100%;
+        border-radius: 100%;
+        &:hover {
+            background-color: rgb(255, 255, 255);
+        }
+    }
+    .google-btn {
+        border: 3px solid rgb(255, 81, 81) ;
+        background-color: rgb(255, 81, 81);
+    }
+}
