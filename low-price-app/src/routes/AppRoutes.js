@@ -1,8 +1,9 @@
 import React from 'react'
+import MapView from '../components/MapView'
 
 const AppRoutes = () => {
   return (
-    <div>AppRoutes</div>
+    <MapView/>
   )
 }
 
