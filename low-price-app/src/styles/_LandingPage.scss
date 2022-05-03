@@ -1,18 +1,23 @@
 .divGeneral{
-    background-image: url("https://fondosmil.com/fondo/21961.jpg");
+    background-image: url("https://fondosmil.com/fondo/21979.jpg");
     width: 100%;
     height: 100vh;
-    color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
     .header{
         padding: 3%;
+        display: flex;
+        justify-content: flex-end;
         button{
-            background-color: rgb(192, 21, 21);
+            background-image: linear-gradient(#fd1d1d,#b91919);
             padding-left: 2%;
             padding-right: 2%;
-            border-bottom: none;
+            border-bottom:none;
+            border-bottom: 2rem;
             border-radius: 4rem;
-            display: flex;
-            justify-content: flex-end;
         }
     }
     h1{
@@ -23,10 +28,71 @@
     p{
         padding-top: 3%;
         padding-left: 5%;
-        padding-right: 50%;
+        padding-right: 5%;
         text-align: justify;
     }
-    
+    .footer{
+        margin-top: auto;
+        background-color: rgb(56, 51, 51);
+        padding: 1%;
+        max-height: 20vh;
+        color:white;
+        img{
+            max-width: 5%;
+            max-height: 5%;
+        }
+    }
+
+    .ancho50{
+        width: 50%;
+        padding-right: 5%;
+        
+    }
+
+    .contenedorFormularioyDescripcion{
+        display: flex;
+
+    }
+
+    .formularioRegistro {
+        background-color: rgb(190, 190, 190);
+        color: black;
+        margin: 1.5rem auto;
+
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        border: 1px solid grey;
+        padding: 2rem;
+        border-radius: 15px;
+        h2{
+            margin-bottom: 2rem ;
+        }
+        input{
+            
+            border-radius: 1000px;
+        }
+        div {
+            color: red;
+            font-style: italic;
+        }
+        button {
+            margin: 0 auto;
+            width: 90%;
+            background-color: black;
+            border: 3px solid black ;
+            border-radius: 1000px;
+            color: white;
+            cursor: pointer;
+            margin-top: 2rem;
+            &:hover{
+                color: black;
+                background-color: white;
+            }
+        }
+    }
     
 }
+
 
