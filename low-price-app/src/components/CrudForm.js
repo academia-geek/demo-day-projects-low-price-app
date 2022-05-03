@@ -6,14 +6,13 @@ import Swal from 'sweetalert2';
 const CrudForm = () => {
     const dispatch = useDispatch()
     const [values, handleInputChange, reset] = useForm({
-        id: ''
-        , description: ''
-        , gasolinaCorriente: ''
-        , gasolinaExtra: ''
-        , acpm: ''
-        , name: ''
-        , categoria: ''
-
+        id: '',
+        description: '',
+        gasolinaCorriente: '',
+        gasolinaExtra: '',
+        acpm: '',
+        name: '',
+        categoria: ''
     })
 
     const { id, description, gasolinaCorriente, gasolinaExtra, acpm, name, categoria } = values
