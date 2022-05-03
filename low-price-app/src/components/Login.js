@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { loginEmailPassAsync, loginFacebook, loginGoogle } from '../redux/actions/actionLogin';
 import { Link } from 'react-router-dom';
-import '../styles/login.scss'
+// import '../styles/login.scss'
 
 //----------------Validacion de cada input -----------
 const SignupSchema = Yup.object().shape({
