@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-import { loginEmailPassAsync,loginGoogle } from '../redux/actions/actionLogin';
+import { loginEmailPassAsync, loginFacebook, loginGoogle } from '../redux/actions/actionLogin';
 import { Link } from 'react-router-dom';
 import '../styles/login.scss'
 
@@ -31,7 +31,12 @@ export const Login = () => {
     const handleGoogle = () => {
         dispatch(loginGoogle())
     }
-    
+
+    const handleFacebook = () => {
+        dispatch(loginFacebook())
+    }
+
+
     return (
 
         <div>
@@ -75,10 +80,22 @@ export const Login = () => {
                                         <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
                                     </div>
                                 </button>
-                            </div>
-                        </div>
 
-                        <Link to="/register">Registrarse</Link>
+                                <div className="auth__social-networks">
+                                    <button
+                                        type='button'
+                                        className="fb-btn"
+                                        onClick={handleFacebook}
+                                    >
+                                        <div className="google-icon-wrapper">
+                                            <img className="google-icon" src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1647906709/samples/sprint2reto2/icon-facebook_wtrxil.svg" alt="google button" />
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            </div>
+
+                            <Link to="/register">Registrarse</Link>
 
                     </Form>
                 )}

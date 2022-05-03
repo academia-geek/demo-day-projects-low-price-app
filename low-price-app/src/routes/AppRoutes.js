@@ -11,7 +11,7 @@ import DashboardRoute from './DashboardRoute';
 import MapView from '../components/MapView';
 import { LandingPage } from '../components/LandingPage';
 
-const AppRoutes = () => {
+export const AppRoutes = () => {
   const [checking, setChecking] = useState(true)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
@@ -40,11 +40,6 @@ const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes >
-        <Route path="/landing" element={
-            <PublicRouters isAut={isLoggedIn}>
-              <LandingPage />
-            </PublicRouters>} />
-          
         <Route path="/login" element={
           <PublicRouters isAut={isLoggedIn}>
             <Login />
@@ -72,5 +67,3 @@ const AppRoutes = () => {
     </BrowserRouter>
   )
 }
-
-export default AppRoutes

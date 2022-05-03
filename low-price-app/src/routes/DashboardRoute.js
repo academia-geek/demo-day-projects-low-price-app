@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Home from '../components/Home';
+import MapView from '../components/MapView';
 
 
 
@@ -11,6 +12,7 @@ const DashboardRoute = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="*" element={<Navigate to="/" />} />
+                    <Route path="/map" element={<MapView />} />
                 </Routes>
             </>
         </div>
