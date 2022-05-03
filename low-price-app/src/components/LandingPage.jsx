@@ -115,8 +115,6 @@ export const LandingPage = () => {
                     <li>3138683453</li>
                     <li>lowprice@gmail.com</li>
                 </ul>
-
-
             </div>
         </div>
     );

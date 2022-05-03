@@ -7,6 +7,7 @@
     flex-direction: column;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
     .header{
         padding: 3%;
         display: flex;
@@ -36,11 +37,13 @@
         margin-top: auto;
         background-color: rgb(56, 51, 51);
         padding: 1%;
-        max-height: 20vh;
+        // height: 50vh;
         color:white;
         img{
-            max-width: 50%;
-            max-height: 50%;
+            width: 110px;
+            bottom: 0px;
+            position: absolute;
+            right: 5%;
         }
     }
 
