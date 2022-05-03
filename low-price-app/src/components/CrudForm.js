@@ -51,8 +51,8 @@ const CrudForm = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit} className="addForm">
-                <h1>Agregar Producto</h1>
+            <form onSubmit={handleSubmit} className="crudForm">
+                <h4>Agregar Producto</h4>
                 <div>
                     <input type="text" name="id" placeholder="id" value={id} onChange={handleInputChange} />
                     <input type="text" name="description" placeholder="description" value={description} onChange={handleInputChange} />
@@ -63,11 +63,9 @@ const CrudForm = () => {
                     <input type="text" name="categoria" placeholder="Categoria" value={categoria} onChange={handleInputChange} />
                 </div>
                 <button type="submit">
-                    <h2>Agregar</h2>
+                    <span>Agregar</span>
                 </button>
-
             </form>
-
         </div>
     )
 }
