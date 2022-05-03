@@ -40,6 +40,12 @@ export const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes >
+
+        <Route path="/landing" element={
+          <PublicRouters isAut={isLoggedIn}>
+            <LandingPage />
+          </PublicRouters>} />
+
         <Route path="/login" element={
           <PublicRouters isAut={isLoggedIn}>
             <Login />
