@@ -1,5 +1,9 @@
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth"
+<<<<<<< HEAD
 import { google } from "../../Firebase/firebaseConfig"
+=======
+import { facebook, google } from "../../Firebase/firebaseConfig"
+>>>>>>> rr
 
 import { typesLogin } from "../types/types"
 
@@ -31,6 +35,20 @@ export const loginGoogle = () => {
     return (dispatch) => {
         const auth = getAuth()
         signInWithPopup(auth, google)
+            .then(({ user }) => {
+                console.log(user, 'Usuario autorizado')
+            })
+            .catch(error => {
+                console.warn(error, 'No autorizado')
+            })
+    }
+}
+
+//-----------Facebook---------------//
+export const loginFacebook = () => {
+    return (dispatch) => {
+        const auth = getAuth()
+        signInWithPopup(auth, facebook)
             .then(({ user }) => {
                 console.log(user, 'Usuario autorizado')
             })

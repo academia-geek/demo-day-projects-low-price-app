@@ -40,11 +40,14 @@ const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes >
+<<<<<<< HEAD
         <Route path="/landing" element={
             <PublicRouters isAut={isLoggedIn}>
               <LandingPage />
             </PublicRouters>} />
           
+=======
+>>>>>>> rr
         <Route path="/login" element={
           <PublicRouters isAut={isLoggedIn}>
             <Login />
@@ -56,6 +59,7 @@ const AppRoutes = () => {
           </PublicRouters>
         } />
 
+<<<<<<< HEAD
         <Route path="/map" element={
           <PublicRouters >
             <MapView/>
@@ -64,6 +68,8 @@ const AppRoutes = () => {
 
 
 
+=======
+>>>>>>> rr
         <Route path="/*" element={<PrivateRoutes isAut={isLoggedIn}>
           <DashboardRoute />
         </PrivateRoutes>} />
