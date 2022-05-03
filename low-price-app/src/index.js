@@ -2,9 +2,9 @@ import React from 'react';
 import './style/App.css'
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import AppRoutes from './routes/AppRoutes';
 import { store } from './store/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { AppRoutes } from './routes/AppRoutes';
 
 ReactDOM.render(
   <Provider store={store}>
