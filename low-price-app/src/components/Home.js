@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom'
+import CrudForm from './CrudForm'
 
 const Home = () => {
 const [state, setState] = useState({
@@ -25,6 +26,7 @@ const [state, setState] = useState({
   
   return (
     <div>
+      <CrudForm />
       <h1>Geolocation</h1>
       <p>Longitude:{state.longitude}</p>
       <p>Latitude:{state.latitude}</p>
