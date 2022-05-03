@@ -1,9 +1,5 @@
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth"
-<<<<<<< HEAD
-import { google } from "../../Firebase/firebaseConfig"
-=======
 import { facebook, google } from "../../Firebase/firebaseConfig"
->>>>>>> rr
 
 import { typesLogin } from "../types/types"
 
