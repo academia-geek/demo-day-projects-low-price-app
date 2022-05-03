@@ -57,12 +57,6 @@ export const AppRoutes = () => {
           </PublicRouters>
         } />
 
-        <Route path="/map" element={
-          <PublicRouters >
-            <MapView/>
-          </PublicRouters>
-        } />
-
         <Route path="/*" element={<PrivateRoutes isAut={isLoggedIn}>
           <DashboardRoute />
         </PrivateRoutes>} />
