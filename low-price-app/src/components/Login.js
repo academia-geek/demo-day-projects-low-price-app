@@ -95,7 +95,7 @@ export const Login = () => {
                             </div>
                             </div>
 
-                            <Link to="/register">Registrarse</Link>
+                            <Link to="/landing">¿Aún no te has registrado?</Link>
 
                     </Form>
                 )}

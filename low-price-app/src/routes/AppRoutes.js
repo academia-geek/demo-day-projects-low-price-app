@@ -63,8 +63,6 @@ export const AppRoutes = () => {
           </PublicRouters>
         } />
 
-
-
         <Route path="/*" element={<PrivateRoutes isAut={isLoggedIn}>
           <DashboardRoute />
         </PrivateRoutes>} />
