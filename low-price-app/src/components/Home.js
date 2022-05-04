@@ -25,9 +25,6 @@ const [state, setState] = useState({
   
   return (
     <div>
-      <h1>Geolocation</h1>
-      <p>Longitude:{state.longitude}</p>
-      <p>Latitude:{state.latitude}</p>
       <MapView localizacion ={state}/>
     </div>
   )
