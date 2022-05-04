@@ -1,19 +1,7 @@
-export const obtenerLocalStorage = () => {
-    const carritoStorage = sessionStorage.getItem('carrito')
-    if (carritoStorage === null) {
-        return undefined
-    }
-    return JSON.parse(carritoStorage)
-}
-
-export const guardarLocalStorage = (state) => {
-    const carritoState = JSON.stringify(state)
-    sessionStorage.setItem('carrito', carritoState)
-}
-
-export const guardarUsuarioStorage = (nombre, email) => {
+export const guardarUsuarioStorage = (nombre, email, photo) => {
     sessionStorage.setItem('nombre', nombre)
     sessionStorage.setItem('email', email)
+    sessionStorage.setItem('photo', photo)
 }
 
 export const obtenerUsuarioStorage = (chosen) => {
