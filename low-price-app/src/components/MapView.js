@@ -26,13 +26,14 @@ const MapView = ( ) => {
 
 
   return (
-    <MapContainer center={{lat:state.lat, lng:state.lng}} zoom={15}>
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <Markers estaciones={estaciones} />
-    </MapContainer>
+      <MapContainer center={{ lat: state.lat, lng: state.lng }} zoom={15}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Markers estaciones={estaciones} />
+        <button className='Menu'></button>
+      </MapContainer>
   )
 
 }
