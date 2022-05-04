@@ -1,12 +1,39 @@
 @import "LandingPage";
 @import "login";
+@import "profile";
+@import "crudForm";
 
-:root{
-    --rojo:#E72F3E;
-    --negro:#343434;
-    --verde:#18b15a;
-    --amarillo:#f5b531;
-    --blanco:#ffffff;
-    --azul:#3171ec;
-    --blancoTransparente:rgba(255, 255, 255, 0.8);
+:root {
+    --rojo: #E72F3E;
+    --negro: #343434;
+    --verde: #18b15a;
+    --amarillo: #f5b531;
+    --blanco: #ffffff;
+    --azul: #3171ec;
+    --blancoTransparente: rgba(255, 255, 255, 0.8);
+}
+
+body {
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
+input,
+button {
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 2px 2px 2px 2px rgb(12, 12, 12) ;
+}
+
+button,
+img {
+    cursor: pointer;
+}
+
+button {
+    padding: 2px 0;
+    border: 3px solid var(--rojo);
+    &:hover {
+        background-color: var(--blancoTransparente);
+    }
 }

@@ -27,23 +27,30 @@
         margin-left: 5%;
         color: var(--rojo);
     }
-    p{
+    /*p{
         padding-top: 3%;
         padding-left: 5%;
         padding-right: 5%;
+        padding-bottom: 3%;
+        margin-left: 3%;
         text-align: justify;
-    }
+        border-radius: 15px;
+        color: white;
+        background-color: black;
+        opacity: 0.8;
+    }*/
     .footer{
         margin-top: auto;
         background-color: var(--negro);
         padding: 1%;
-        // height: 50vh;
+        opacity: 0.8;
         color:white;
         img{
             width: 110px;
             bottom: 0px;
             position: absolute;
             right: 5%;
+            margin-top: 20%;
         }
     }
 

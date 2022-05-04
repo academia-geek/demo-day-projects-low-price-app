@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import MapView from './MapView';
 
 const Home = () => {
-const [state, setState] = useState({
-  longitude: 0, 
-  latitude:0,
-});
+	const [state, setState] = useState({
+		longitude: 0,
+		latitude: 0,
+	});
 
 
   useEffect(() => {

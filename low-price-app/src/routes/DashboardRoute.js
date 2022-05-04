@@ -1,16 +1,21 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Home from '../components/Home';
+import CrudForm from '../components/CrudForm';
+import Favoritos from '../components/Favoritos';
 import MapView from '../components/MapView';
+import Profile from '../components/Profile';
 
 const DashboardRoute = () => {
     return (
         <div>
             <>
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<MapView />} />
                     <Route path="*" element={<Navigate to="/" />} />
-                    <Route path="/map/:localizacion" element={<MapView />} />
+                    <Route path="/map" element={<MapView />} />
+                    <Route path="/crudForm" element={<CrudForm />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/favoritos" element={<Favoritos />} />
                 </Routes>
             </>
         </div>
