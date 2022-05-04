@@ -2,7 +2,6 @@ import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import CrudForm from '../components/CrudForm';
 import Favoritos from '../components/Favoritos';
-import Home from '../components/Home';
 import MapView from '../components/MapView';
 import Profile from '../components/Profile';
 
@@ -11,7 +10,7 @@ const DashboardRoute = () => {
         <div>
             <>
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<MapView />} />
                     <Route path="*" element={<Navigate to="/" />} />
                     <Route path="/map" element={<MapView />} />
                     <Route path="/crudForm" element={<CrudForm />} />
