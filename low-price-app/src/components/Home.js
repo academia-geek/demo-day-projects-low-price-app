@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom'
+import MapView from './MapView';
 
 const Home = () => {
 const [state, setState] = useState({
@@ -28,10 +28,7 @@ const [state, setState] = useState({
       <h1>Geolocation</h1>
       <p>Longitude:{state.longitude}</p>
       <p>Latitude:{state.latitude}</p>
-      <Link to={{
-        pathname:'/map',
-        state
-      }}>Ver mi Geolocation</Link>
+      <MapView localizacion ={state}/>
     </div>
   )
 }

@@ -1,14 +1,12 @@
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
 import { Register } from '../components/Register';
 import { Login } from '../components/Login';
 import { guardarUsuarioStorage } from '../helpers/LocalStorage';
 import PublicRouters from './PublicRoutes';
 import PrivateRoutes from './PrivateRoutes';
 import DashboardRoute from './DashboardRoute';
-import MapView from '../components/MapView';
 import { LandingPage } from '../components/LandingPage';
 
 export const AppRoutes = () => {
@@ -20,7 +18,7 @@ export const AppRoutes = () => {
     onAuthStateChanged(auth, (user) => {
       if (user?.uid) {
         guardarUsuarioStorage(user.displayName, user.email)
-        console.log(user)
+        // console.log(user)
         setIsLoggedIn(true)
       }
       else {
