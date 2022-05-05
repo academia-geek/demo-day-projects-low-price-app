@@ -5,7 +5,6 @@ import Popups from './Popups'
 
 
 const Markers = ({estaciones}) => {
-  console.log(estaciones)
   const markers = estaciones.map(estacion => (
     <Marker key={estaciones.id} position={estacion.geometry} icon={IconLocation}>
       <Popups data={estacion} />

@@ -7,28 +7,17 @@
     min-height: 100vh;
     background-color: rgba(0, 0, 0, 0.75);
     display: none;
-    justify-content: center;
-    align-items: center;
-}
-.modalCarrito{
-    justify-content: flex-end;
-    align-items: flex-start; 
-}
-.modalMenu{
-    padding-top: 12vh;
-    justify-content: flex-start;
-    align-items: flex-start; 
 }
 .modal.isOpen{
     display: flex;
 }
 .modalContainer{
     position: relative;
-    width: 40%;
-    height: 90vh;
+    width: 20%;
+    height: 100vh;
     overflow-y:auto ;
     padding: 2rem;
-    background-color: white;
+    background-color: rgb(103, 100, 100);
 }
 .modalContainerCarrito{
     border-bottom-left-radius: 10px;
@@ -45,4 +34,18 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+    width: 10%;
+    border-radius: 2px;
+}
+.title{
+    margin-top: 20%;
+    color: #18B15A;
+    font-size: 2rem;
+    text-align: center;
+}
+section{
+    border-bottom: 1px solid white;
+}
+.subTitle{
+    font-size: 2rem;
 }

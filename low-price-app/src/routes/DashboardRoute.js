@@ -12,7 +12,6 @@ const DashboardRoute = () => {
                 <Routes>
                     <Route path="/" element={<MapView />} />
                     <Route path="*" element={<Navigate to="/" />} />
-                    <Route path="/map" element={<MapView />} />
                     <Route path="/crudForm" element={<CrudForm />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/favoritos" element={<Favoritos />} />
