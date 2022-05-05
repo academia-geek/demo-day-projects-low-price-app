@@ -5,7 +5,7 @@ import { FileUp } from '../helpers/FileUp';
 import { useForm } from '../hooks/useForm';
 import List from './List';
 import '../styles/Add.css'
-import { addAsync } from '../redux/actions/actionLugares';
+import { addAsync } from '../redux/actions/actionEstaciones';
 
 const Add = () => {
     

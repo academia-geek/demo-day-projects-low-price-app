@@ -2,47 +2,47 @@ import React from 'react'
 import { useForm } from '../hooks/useForm';
 import { useDispatch } from 'react-redux'
 import Swal from 'sweetalert2';
+import { addAsync } from '../redux/actions/actionEstaciones';
+import uuid from 'react-uuid';
 
 const CrudForm = () => {
     const dispatch = useDispatch()
     const [values, handleInputChange, reset] = useForm({
-        id: '',
         description: '',
-        gasolinaCorriente: '',
-        gasolinaExtra: '',
-        acpm: '',
         name: '',
-        categoria: ''
+        lat: '',
+        long: '' ,
+        gasolinaExtra: '' ,
+        gasolinaCorriente: '' ,
+        acpm: ''
     })
 
-    const { id, description, gasolinaCorriente, gasolinaExtra, acpm, name, categoria } = values
-    const geometry = [145, -789]
+    const { description, name, gasolinaExtra, gasolinaCorriente, acpm, lat,long} = values
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log({
-            id,
-            description,
-            name,
-            precio: {
-                gasolinaCorriente, gasolinaExtra, acpm
-            },
-            geometry,
-            categoria,
+        const id = uuid();
+        const gasolinaExtraNumero = parseInt(gasolinaExtra)
+        const gasolinaCorrienteNumero = parseInt(gasolinaCorriente)
+        const acpmNumero = parseInt(acpm)
+        const latitudNumero =  parseInt(lat)
+        const longitudNumero =  parseInt(long)
+        const estacionAGuardar = {
+            id: id, 
+            description: description, 
+            name: name, 
+            precio:{gasolinaExtraNumero, gasolinaCorrienteNumero, acpmNumero}, 
+            geometry:[latitudNumero, longitudNumero]
         }
-        )
-        /* dispatch(addProduct(
-            {
-                ...values,
-            }
-        )) */
+        console.log(estacionAGuardar)
+        dispatch(addAsync(estacionAGuardar))
         reset()
 
         Swal.fire({
             title: 'Agregado!',
-            text: 'Modal with a custom image.',
-            imageUrl: values.foto,
+            text: 'La estación fue agregada',
+            //imageUrl: values.foto,
             imageWidth: 400,
             imageHeight: 200,
             imageAlt: 'Custom image',
@@ -53,13 +53,13 @@ const CrudForm = () => {
         <form onSubmit={handleSubmit} className="crudForm">
             <h4>Agregar Estacion</h4>
             <div>
-                <input type="text" name="id" placeholder="id" value={id} onChange={handleInputChange} />
                 <input type="text" name="description" placeholder="description" value={description} onChange={handleInputChange} />
                 <input type="text" name="name" placeholder="name" value={name} onChange={handleInputChange} />
+                <input type="number" name="lat" placeholder="lat" value={lat} onChange={handleInputChange} />
+                <input type="number" name="long" placeholder="long" value={long} onChange={handleInputChange} />
                 <input type="number" name="gasolinaExtra" placeholder="gasolinaExtra" value={gasolinaExtra} onChange={handleInputChange} />
                 <input type="number" name="gasolinaCorriente" placeholder="gasolinaCorriente" value={gasolinaCorriente} onChange={handleInputChange} />
                 <input type="number" name="acpm" placeholder="acpm" value={acpm} onChange={handleInputChange} />
-                <input type="text" name="categoria" placeholder="Categoria" value={categoria} onChange={handleInputChange} />
             </div>
             <hr />
             <button type="submit">
