@@ -1,20 +1,22 @@
 import { addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc, where } from "firebase/firestore"
 import { baseDato } from "../../Firebase/firebaseConfig"//Ingresar la bd de Daniel
-import { typesLugares } from "../types/types"
+import { typesEstaciones } from "../types/types"
+
+const nombreEntidad = "estacionesBD"
 
 //---------------------Edit-----------//
 export const editAsync = (codigo, lugar) => {
   console.log(codigo, lugar)
   return async (dispatch) => {
-    const colleccionTraer = collection(baseDato, "lugaresBD")
-    const q = query(colleccionTraer, where("codigo", "==", codigo))
+    const colleccionTraer = collection(baseDato, nombreEntidad)
+    const q = query(colleccionTraer, where("id", "==", codigo))
     const traerDatosQ = await getDocs(q)
     let id
     traerDatosQ.forEach(async (docu) => {
       id = docu.id
     })
     console.log(id)
-    const documenRef = doc(baseDato, "lugaresBD", id)
+    const documenRef = doc(baseDato, nombreEntidad, id)
     await updateDoc(documenRef, lugar)
       .then(resp => {
         dispatch(editSync(lugar))
@@ -29,7 +31,7 @@ export const editAsync = (codigo, lugar) => {
 
 export const editSync = (lugar) => {
   return {
-    type: typesLugares.editSync,
+    type: typesEstaciones.editSync,
     payload: lugar
   }
 
@@ -39,11 +41,11 @@ export const editSync = (lugar) => {
 export const deleteAsync = (codigo) => {
 
   return async (dispatch) => {
-    const colleccionTraer = collection(baseDato, "lugaresBD")
-    const q = query(colleccionTraer, where("codigo", "==", codigo))
+    const colleccionTraer = collection(baseDato, nombreEntidad)
+    const q = query(colleccionTraer, where("id", "==", codigo))
     const traerDatosQ = await getDocs(q)
     traerDatosQ.forEach((docum => {
-      deleteDoc(doc(baseDato, "lugaresBD", docum.id))
+      deleteDoc(doc(baseDato, nombreEntidad, docum.id))
     }))
     dispatch(deleteSync(codigo))
     dispatch(listAsyn())
@@ -52,7 +54,7 @@ export const deleteAsync = (codigo) => {
 
 export const deleteSync = (codigo) => {
   return {
-    type: typesLugares.delete,
+    type: typesEstaciones.delete,
     payload: codigo
   }
 
@@ -61,23 +63,23 @@ export const deleteSync = (codigo) => {
 //---------------listar----------------//
 export const listAsyn = () => {
   return async (dispatch) => {
-    const colleccionTraer = await getDocs(collection(baseDato, "lugaresBD"))
-    const lugares = []
+    const colleccionTraer = await getDocs(collection(baseDato, nombreEntidad))
+    const estaciones = []
     colleccionTraer.forEach((doc) => {
-      lugares.push({
+      estaciones.push({
         ...doc.data()
 
 
       })
     })
-    dispatch(listSync(lugares))
+    dispatch(listSync(estaciones))
 
   }
 }
 
 export const listSync = (lugar) => {
   return {
-    type: typesLugares.list,
+    type: typesEstaciones.list,
     payload: lugar
   }
 
@@ -86,7 +88,7 @@ export const listSync = (lugar) => {
 //-------------agregar---------------//
 export const addAsync = (lugar) => {
   return (dispatch) => {
-    addDoc(collection(baseDato, "lugaresBD"), lugar)
+    addDoc(collection(baseDato, nombreEntidad), lugar)
       .then(resp => {
         dispatch(addSync(lugar))
         //  dispatch(listAsyn())
@@ -99,7 +101,7 @@ export const addAsync = (lugar) => {
 
 export const addSync = (lugar) => {
   return {
-    type: typesLugares.add,
+    type: typesEstaciones.add,
     payload: lugar,
   }
 }
