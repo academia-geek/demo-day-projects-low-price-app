@@ -38,7 +38,7 @@ export const Register = () => {
 
 return (
 
-    <div>
+    <div className='Cont'>
         <Formik
             initialValues={
                 {
