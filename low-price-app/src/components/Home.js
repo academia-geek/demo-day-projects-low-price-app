@@ -29,6 +29,7 @@ const Home = () => {
 			<header>
 				<Link to='/crudform'>Add Info</Link>|
 				<Link to='/profile'>Profile</Link>|
+				<Link to='/favoritos'>Favoritos</Link>|
 			</header>
 
 			<h1>Geolocation</h1>
