@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
-
+import MapView from './MapView';
 
 const Home = () => {
 	const [state, setState] = useState({
@@ -9,38 +8,26 @@ const Home = () => {
 	});
 
 
-	useEffect(() => {
-		navigator.geolocation.getCurrentPosition(
-			function (position) {
-				setState({
-					longitude: position.coords.longitude,
-					latitude: position.coords.latitude
-				})
-			},
-			function (error) {
-				console.log(error)
-			},
-			{ enableHighAccuracy: true }
-		);
-	});
-
-	return (
-		<div>
-			<header>
-				<Link to='/crudform'>Add Info</Link>|
-				<Link to='/profile'>Profile</Link>|
-				<Link to='/favoritos'>Favoritos</Link>|
-			</header>
-
-			<h1>Geolocation</h1>
-			<p>Longitude:{state.longitude}</p>
-			<p>Latitude:{state.latitude}</p>
-			<Link to={{
-				pathname: '/map',
-				state
-			}}>Ver mi Geolocation</Link>
-		</div>
-	)
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      function(position){
+        setState({
+          longitude: position.coords.longitude,
+          latitude: position.coords.latitude
+        })
+      },
+      function(error){
+        console.log(error)
+      },
+      {enableHighAccuracy:true}
+    );
+  },);
+  
+  return (
+    <div>
+      <MapView localizacion ={state}/>
+    </div>
+  )
 }
 
 export default Home

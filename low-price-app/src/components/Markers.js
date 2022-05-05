@@ -1,16 +1,15 @@
 import React from 'react'
 import { Marker } from 'react-leaflet'
 import { IconLocation } from './IconLocation'
+import Popups from './Popups'
 
 
-const Markers = (props) => {
-  const { estaciones } = props
+const Markers = ({estaciones}) => {
+  console.log(estaciones)
   const markers = estaciones.map(estacion => (
-    <Marker
-      key={estaciones.id}
-      position={estacion.geometry}
-      icon={IconLocation}
-    />
+    <Marker key={estaciones.id} position={estacion.geometry} icon={IconLocation}>
+      <Popups data={estacion} />
+    </Marker>
   ));
   return markers;
 }

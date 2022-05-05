@@ -1,0 +1,48 @@
+.modal {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modalCarrito{
+    justify-content: flex-end;
+    align-items: flex-start; 
+}
+.modalMenu{
+    padding-top: 12vh;
+    justify-content: flex-start;
+    align-items: flex-start; 
+}
+.modal.isOpen{
+    display: flex;
+}
+.modalContainer{
+    position: relative;
+    width: 40%;
+    height: 90vh;
+    overflow-y:auto ;
+    padding: 2rem;
+    background-color: white;
+}
+.modalContainerCarrito{
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 20%;
+}
+.modalContainerMenu{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 88vh;
+    width: 20%;
+}
+.modalClose{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
