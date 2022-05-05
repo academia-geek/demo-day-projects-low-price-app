@@ -2,11 +2,7 @@ import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import CrudForm from '../components/CrudForm';
 import Favoritos from '../components/Favoritos';
-<<<<<<< HEAD
-import Home from '../components/Home';
 import List from '../components/List';
-=======
->>>>>>> 720e215c71af6d48406d9a572d5868457504151e
 import MapView from '../components/MapView';
 import Profile from '../components/Profile';
 
