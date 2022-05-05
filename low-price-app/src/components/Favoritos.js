@@ -1,17 +1,32 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { listAsyn } from '../redux/actions/actionEstaciones'
+import { listAsyn } from '../redux/actions/actionFavoritos'
+import { listAsyn as listEstaciones } from '../redux/actions/actionEstaciones'
+
 
 const Favoritos = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    let { estaciones } = useSelector(store => store.estaciones)
-
     useEffect(() => {
         dispatch(listAsyn())
+        dispatch(listEstaciones())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+
+    const { favoritos } = useSelector(store => store.favoritos)
+
+    const { estaciones } = useSelector(store => store.estaciones)
+
+
+    const estacionesId = favoritos.map(f => f.id);
+    console.log(estacionesId);
+
+    const estacion = estaciones.filter(e=>e.id === estacionesId[0])
+    console.log(estacion);
+
 
     return (
         <section id='favoritos'>
@@ -24,7 +39,7 @@ const Favoritos = () => {
                 <span className='blue'> ACPM </span>
             </div>
             <hr />
-            {
+             {/* {
                 estaciones.map((s, index) =>
                     <section key={index}>
                         <div >
@@ -38,7 +53,7 @@ const Favoritos = () => {
                         <hr />
                     </section>
                 )
-            }
+            }  */}
         </section>
     )
 }

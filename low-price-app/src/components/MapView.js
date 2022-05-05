@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import Markers from './Markers'
-import estaciones from '../data/dataCopy'
 import Modal from './Modal';
 import { useModal } from '../hooks/useModal';
 import favorito from '../assets/star - copia.png'
@@ -12,8 +11,10 @@ import perfil from '../assets/perfil.png'
 import agregar from '../assets/Plus.png'
 import salir from '../assets/cerrarSesion.png'
 import { logoutAsync } from '../redux/actions/actionLogin';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { listAsyn } from '../redux/actions/actionEstaciones';
+
 
 const MapView = ( ) => {
   const [isOpenModal, openModal, closeModal] = useModal(false);
@@ -21,7 +22,10 @@ const MapView = ( ) => {
     lat: '4.707151617979109', lng: '-74.22277595106928' ,
   });
 
+  const { estaciones } = useSelector(store => store.estaciones)
+
   useEffect(() => {
+    dispatch(listAsyn())
     navigator.geolocation.getCurrentPosition(
       function (position) {
         setState({
@@ -34,16 +38,14 @@ const MapView = ( ) => {
       },
       { enableHighAccuracy: true }
     );
-  });
+  },[MapContainer]);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleLogout = () => {
     dispatch(logoutAsync())
     navigate("/login")
   }
-
-
-
 
   return (
       <div>
@@ -52,8 +54,8 @@ const MapView = ( ) => {
         <section>
           <p className='subTitle'>General</p>
           <p className='pointer'><img src={favorito} alt='' />  Favoritos</p>
-          <p className='pointer'><img src={agregar}/>   Agregar Estacion</p>
-          <p className='pointer'><img src={actualizar} width="10%"/>  Actualizar Precios</p>
+          <p className='pointer'><img src={agregar} alt=''/>   Agregar Estacion</p>
+          <p className='pointer'><img src={actualizar} width="10%" alt=''/>  Actualizar Precios</p>
         </section>
         <section>
           <p className='subTitle'>Mi Cuenta</p>

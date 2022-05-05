@@ -26,8 +26,8 @@ const CrudForm = () => {
         const gasolinaExtraNumero = parseInt(gasolinaExtra)
         const gasolinaCorrienteNumero = parseInt(gasolinaCorriente)
         const acpmNumero = parseInt(acpm)
-        const latitudNumero =  parseInt(lat)
-        const longitudNumero =  parseInt(long)
+        const latitudNumero =  lat
+        const longitudNumero =  long
         const estacionAGuardar = {
             id: id, 
             description: description, 
@@ -42,10 +42,6 @@ const CrudForm = () => {
         Swal.fire({
             title: 'Agregado!',
             text: 'La estación fue agregada',
-            //imageUrl: values.foto,
-            imageWidth: 400,
-            imageHeight: 200,
-            imageAlt: 'Custom image',
         })
     }
 

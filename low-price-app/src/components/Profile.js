@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { logoutAsync } from '../redux/actions/actionLogin'
-
+import logooutLogo from '../assets/cerrarSesion.png'
 
 const Profile = () => {
 	const dispatch = useDispatch()
@@ -45,7 +45,7 @@ const Profile = () => {
 				<Link to='/favoritos'>Favoritos</Link>
 			</div>
 			<span className='cerrarSesionTitle' onClick={handleLogout}>
-				<img src="" alt="" />
+				<img style={{width:'1rem'}} src={logooutLogo} alt="" />
 				<h4>Cerrar Sesión</h4>
 			</span>
 		</section>
