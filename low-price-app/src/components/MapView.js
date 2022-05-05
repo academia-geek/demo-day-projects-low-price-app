@@ -11,6 +11,9 @@ import actualizar from '../assets/actualizar.png'
 import perfil from '../assets/perfil.png'
 import agregar from '../assets/Plus.png'
 import salir from '../assets/cerrarSesion.png'
+import { logoutAsync } from '../redux/actions/actionLogin';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const MapView = ( ) => {
   const [isOpenModal, openModal, closeModal] = useModal(false);
@@ -32,6 +35,15 @@ const MapView = ( ) => {
       { enableHighAccuracy: true }
     );
   });
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    dispatch(logoutAsync())
+    navigate("/login")
+  }
+
+
+
 
   return (
       <div>
@@ -39,22 +51,21 @@ const MapView = ( ) => {
         <h3 className='title'>LOW PRICE APP</h3>
         <section>
           <p className='subTitle'>General</p>
-
-          <p><img src={favorito} alt='' />  Favoritos</p>
-          <p><img src={agregar}/>   Agregar Estacion</p>
-          <p><img src={actualizar} width="10%"/>  Actualizar Precios</p>
+          <p className='pointer'><img src={favorito} alt='' />  Favoritos</p>
+          <p className='pointer'><img src={agregar}/>   Agregar Estacion</p>
+          <p className='pointer'><img src={actualizar} width="10%"/>  Actualizar Precios</p>
         </section>
         <section>
           <p className='subTitle'>Mi Cuenta</p>
-          <p><img src={perfil} alt='' />  Perfil</p>
+          <p className='pointer'><img src={perfil} alt='' />  Perfil</p>
         </section>
         <section>
           <p className='subTitle'>Otros</p>
-          <p><img src={acercaDe} alt='' />  Sobre Nosotros</p>
+          <p className='pointer'><img src={acercaDe} alt='' />  Sobre Nosotros</p>
         </section>
-        <section>
-          <p className='subTitle'>Salir</p>
-          <p><img  width="10%" src={salir} alt='' />  Cerrar Sesión</p>
+        <section >
+          <p onClick={handleLogout} className='subTitle'>Salir</p>
+          <p className='pointer' onClick={handleLogout}><img  width="10%" src={salir} alt='' />  Cerrar Sesión</p>
         </section>
       </Modal>
       <MapContainer center={{ lat: state.lat, lng: state.lng }} zoom={15}>
