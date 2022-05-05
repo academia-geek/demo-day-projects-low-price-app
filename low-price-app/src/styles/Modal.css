@@ -39,13 +39,17 @@
 }
 .title{
     margin-top: 20%;
-    color: #18B15A;
+    color: white;
     font-size: 2rem;
     text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 section{
     border-bottom: 1px solid white;
 }
 .subTitle{
     font-size: 2rem;
+}
+.pointer{
+    cursor: pointer;
 }
