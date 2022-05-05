@@ -5,11 +5,10 @@ import { typesEstaciones } from "../types/types"
 const nombreEntidad = "estacionesBD"
 
 //---------------------Edit-----------//
-export const editAsync = (codigo, lugar) => {
-  console.log(codigo, lugar)
+export const editAsync = (idRecibido, estacion) => {
   return async (dispatch) => {
     const colleccionTraer = collection(baseDato, nombreEntidad)
-    const q = query(colleccionTraer, where("id", "==", codigo))
+    const q = query(colleccionTraer, where("id", "==", idRecibido))
     const traerDatosQ = await getDocs(q)
     let id
     traerDatosQ.forEach(async (docu) => {
@@ -17,9 +16,9 @@ export const editAsync = (codigo, lugar) => {
     })
     console.log(id)
     const documenRef = doc(baseDato, nombreEntidad, id)
-    await updateDoc(documenRef, lugar)
+    await updateDoc(documenRef, estacion)
       .then(resp => {
-        dispatch(editSync(lugar))
+        dispatch(editSync(estacion))
         dispatch(listAsyn())
         console.log(resp)
       })
@@ -29,33 +28,33 @@ export const editAsync = (codigo, lugar) => {
 }
 
 
-export const editSync = (lugar) => {
+export const editSync = (estacion) => {
   return {
-    type: typesEstaciones.editSync,
-    payload: lugar
+    type: typesEstaciones.edit,
+    payload: estacion
   }
 
 }
 
 //-------------------delete--------------------//
-export const deleteAsync = (codigo) => {
+export const deleteAsync = (id) => {
 
   return async (dispatch) => {
     const colleccionTraer = collection(baseDato, nombreEntidad)
-    const q = query(colleccionTraer, where("id", "==", codigo))
+    const q = query(colleccionTraer, where("id", "==", id))
     const traerDatosQ = await getDocs(q)
     traerDatosQ.forEach((docum => {
       deleteDoc(doc(baseDato, nombreEntidad, docum.id))
     }))
-    dispatch(deleteSync(codigo))
+    dispatch(deleteSync(id))
     dispatch(listAsyn())
   }
 }
 
-export const deleteSync = (codigo) => {
+export const deleteSync = (id) => {
   return {
     type: typesEstaciones.delete,
-    payload: codigo
+    payload: id
   }
 
 }
@@ -77,20 +76,20 @@ export const listAsyn = () => {
   }
 }
 
-export const listSync = (lugar) => {
+export const listSync = (estacion) => {
   return {
     type: typesEstaciones.list,
-    payload: lugar
+    payload: estacion
   }
 
 }
 
 //-------------agregar---------------//
-export const addAsync = (lugar) => {
+export const addAsync = (estacion) => {
   return (dispatch) => {
-    addDoc(collection(baseDato, nombreEntidad), lugar)
+    addDoc(collection(baseDato, nombreEntidad), estacion)
       .then(resp => {
-        dispatch(addSync(lugar))
+        dispatch(addSync(estacion))
         //  dispatch(listAsyn())
       })
       .catch(error => {
@@ -99,9 +98,9 @@ export const addAsync = (lugar) => {
   }
 }
 
-export const addSync = (lugar) => {
+export const addSync = (estacion) => {
   return {
     type: typesEstaciones.add,
-    payload: lugar,
+    payload: estacion,
   }
 }

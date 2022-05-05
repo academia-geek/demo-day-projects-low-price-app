@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Image, Table } from 'react-bootstrap';
-import ReactImageMagnify from 'react-image-magnify';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteAsync, listAsyn } from '../redux/actions/actionEstaciones';
 import Edit from './Edit';
@@ -17,12 +16,12 @@ const List = () => {
     dispatch(listAsyn())
   }, [])
 
-  const editar = (codigo) => {
-    //--------t=conseguir los datos de ese objeto con ese codigo--------------//
-    const traerLaLugar = estaciones.find(t => t.codigo === codigo)
+  const editar = (id) => {
+    //--------t=conseguir los datos de ese objeto con ese id--------------//
+    const traerLaEstacion = estaciones.find(t => t.id === id)
 
     setModal(true)
-    setEnviarDatosModal(traerLaLugar)
+    setEnviarDatosModal(traerLaEstacion)
 
 
   }
@@ -44,9 +43,9 @@ const List = () => {
                 <td>{p.precio.gasolinaCorrienteNumero}</td>
                 <td>{p.precio.acpm}</td>
                 <td>
-                  <Button margin={10} onClick={() => dispatch(deleteAsync(p.codigo))}> <Image onClick={() => dispatch(deleteAsync(p.id))} width={20} src='https://res.cloudinary.com/danimel/image/upload/v1646015682/trash_2_vcdean.png' /> </Button>
+                  <Button margin={10} onClick={() => dispatch(deleteAsync(p.id))}> <Image onClick={() => dispatch(deleteAsync(p.id))} width={20} src='https://res.cloudinary.com/danimel/image/upload/v1646015682/trash_2_vcdean.png' /> </Button>
 
-                  <Button margin={10} onClick={() => editar(p.codigo)}> <Image onClick={() => editar(p.codigo)} width={20} src='https://res.cloudinary.com/danimel/image/upload/v1646015685/edit_nh7sll.png' /></Button>
+                  <Button margin={10} onClick={() => editar(p.id)}> <Image onClick={() => editar(p.id)} width={20} src='https://res.cloudinary.com/danimel/image/upload/v1646015685/edit_nh7sll.png' /></Button>
                 </td>
 
               </tr>

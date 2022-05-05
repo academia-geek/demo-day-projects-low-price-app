@@ -53,8 +53,8 @@ const CrudForm = () => {
         <form onSubmit={handleSubmit} className="crudForm">
             <h4>Agregar Estacion</h4>
             <div>
-                <input type="text" name="description" placeholder="description" value={description} onChange={handleInputChange} />
                 <input type="text" name="name" placeholder="name" value={name} onChange={handleInputChange} />
+                <input type="text" name="description" placeholder="description" value={description} onChange={handleInputChange} />
                 <input type="number" name="lat" placeholder="lat" value={lat} onChange={handleInputChange} />
                 <input type="number" name="long" placeholder="long" value={long} onChange={handleInputChange} />
                 <input type="number" name="gasolinaExtra" placeholder="gasolinaExtra" value={gasolinaExtra} onChange={handleInputChange} />
