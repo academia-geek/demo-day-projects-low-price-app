@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { AppRoutes } from './routes/AppRoutes';
 import '../src/styles/index.scss'
 
-
 ReactDOM.render(
   <Provider store={store}>
     <AppRoutes />
