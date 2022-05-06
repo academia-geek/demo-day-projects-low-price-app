@@ -10,6 +10,7 @@ const Popups = (props) => {
        <p><strong>Corriente:</strong>{precio?.gasolinaCorrienteNumero}</p> 
        <p><strong>Extra:</strong>{precio?.gasolinaExtraNumero}</p> 
        <p><strong>ACPM:</strong>{precio?.acpmNumero}</p> 
+       <button>Modificar</button>
     </Popup>
   )
 }
