@@ -3,6 +3,7 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { registerAsync} from '../redux/actions/actionRegister';
+import { Link } from 'react-router-dom';
 
 //----------------Validacion de cada input -----------
 const SignupSchema = Yup.object().shape({
@@ -78,6 +79,8 @@ return (
                         (<div>{errors.pass2}</div>) : null}
 
                     <button type="submit" style={{ margin: "2%"}}>Enviar</button>
+                    <Link to="/login">Iniciar Sesión</Link>
+
                 </Form>
             )}
         </Formik>

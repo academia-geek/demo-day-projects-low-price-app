@@ -7,49 +7,64 @@
     min-height: 100vh;
     background-color: rgba(0, 0, 0, 0.75);
     display: none;
+    font-size: smaller;
 }
-.modal.isOpen{
+
+.modal.isOpen {
     display: flex;
 }
-.modalContainer{
+
+.modalContainer {
     position: relative;
-    width: 20%;
-    height: 100vh;
-    overflow-y:auto ;
+    width: 65%;
+    min-height: 100vh;
+    overflow-y: auto;
     padding: 2rem;
     background-color: rgb(103, 100, 100);
+    box-shadow: 10px 10px 13px -3px rgba(0, 0, 0, 0.75);
 }
-.modalContainerCarrito{
+
+@media (min-width:700px) {
+    .modalContainer {
+        width: 40%;
+    }
+}
+
+.modalContainerCarrito {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
     width: 20%;
 }
-.modalContainerMenu{
+
+.modalContainerMenu {
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     height: 88vh;
     width: 20%;
 }
-.modalClose{
+
+.modalClose {
     position: absolute;
     top: 1rem;
     right: 1rem;
     width: 10%;
     border-radius: 2px;
 }
-.title{
+
+.title {
     margin-top: 20%;
-    color: white;
-    font-size: 2rem;
     text-align: center;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
-section{
+
+section {
     border-bottom: 1px solid white;
 }
-.subTitle{
-    font-size: 2rem;
+
+.subTitle {
+    font-size: 22px;
 }
-.pointer{
+
+.pointer {
     cursor: pointer;
 }

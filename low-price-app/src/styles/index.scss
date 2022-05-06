@@ -3,6 +3,7 @@
 @import "profile";
 @import "crudForm";
 @import "favoritos";
+@import "home";
 
 :root {
     --rojo: #E72F3E;
@@ -33,7 +34,7 @@ img {
 
 button {
     padding: 3px 0;
-    border: 3px solid rgb(165, 164, 164);
+    border: none;
     &:hover {
         background-color: var(--blancoTransparente);
     }

@@ -63,13 +63,13 @@ const MapView = () => {
         <h3 className='title'>LOW PRICE APP</h3>
         <section>
           <p className='subTitle'>General</p>
-          <p className='pointer'><img src={favorito} alt='' />  Favoritos</p>
-          <p className='pointer'><img src={agregar} alt=''/>   Agregar Estacion</p>
-          <p className='pointer'><img src={actualizar} width="10%" alt=''/>  Actualizar Precios</p>
+          <p className='pointer' onClick={()=>navigate('/favoritos')}><img src={favorito} alt='' />  Favoritos</p>
+          <p className='pointer' onClick={()=>navigate('/crudForm')}><img src={agregar} alt=''/>   Agregar Estacion</p>
+          <p className='pointer' onClick={()=>navigate('/list')}><img src={actualizar} width="8%" alt=''/>  Actualizar Precios</p>
         </section>
         <section>
           <p className='subTitle'>Mi Cuenta</p>
-          <p className='pointer'><img src={perfil} alt='' />  Perfil</p>
+          <p className='pointer' onClick={()=>navigate('/profile')}><img src={perfil} alt='' />  Perfil</p>
         </section>
         <section>
           <p className='subTitle'>Otros</p>
@@ -77,7 +77,7 @@ const MapView = () => {
         </section>
         <section >
           <p onClick={handleLogout} className='subTitle'>Salir</p>
-          <p className='pointer' onClick={handleLogout}><img  width="10%" src={salir} alt='' />  Cerrar Sesión</p>
+          <p className='pointer'  onClick={handleLogout}><img  width="10%" src={salir} alt='' />  Cerrar Sesión</p>
         </section>
         {favoritos && favoritos.map((s, index) =>
                     <p key={index}>
