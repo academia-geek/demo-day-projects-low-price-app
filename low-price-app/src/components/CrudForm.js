@@ -26,8 +26,8 @@ const CrudForm = () => {
         const gasolinaExtraNumero = parseInt(gasolinaExtra)
         const gasolinaCorrienteNumero = parseInt(gasolinaCorriente)
         const acpmNumero = parseInt(acpm)
-        const latitudNumero =  lat
-        const longitudNumero =  long
+        const latitudNumero = parseFloat(lat) 
+        const longitudNumero = parseFloat(long)  
         const estacionAGuardar = {
             id: id, 
             description: description, 
