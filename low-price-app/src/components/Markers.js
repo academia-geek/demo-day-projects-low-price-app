@@ -5,6 +5,8 @@ import Popups from './Popups'
 
 
 const Markers = ({estaciones}) => {
+
+  
   const markers = estaciones.map((estacion, index )=> (
     <Marker key={index} position={estacion.geometry} icon={IconLocation}>
       <Popups data={estacion} />
@@ -14,3 +16,4 @@ const Markers = ({estaciones}) => {
 }
 
 export default Markers;
+

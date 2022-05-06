@@ -11,6 +11,7 @@ const List = () => {
   const [enviarDatosModal, setEnviarDatosModal] = useState([])
 
   const { estaciones } = useSelector(store => store.estaciones)
+  console.log(estaciones)
 
   useEffect(() => {
     dispatch(listAsyn())
