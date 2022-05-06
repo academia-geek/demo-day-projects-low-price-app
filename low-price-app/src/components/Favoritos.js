@@ -1,31 +1,57 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { listAsyn } from '../redux/actions/actionFavoritos'
+import { listAsynFavoritos } from '../redux/actions/actionFavoritos'
 import { listAsyn as listEstaciones } from '../redux/actions/actionEstaciones'
+import { obtenerUsuarioStorage } from '../helpers/LocalStorage'
 
 
 const Favoritos = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
+    const emailUsuarioActual = obtenerUsuarioStorage('email')
+
+
     useEffect(() => {
-        dispatch(listAsyn())
+        dispatch(listAsynFavoritos())
         dispatch(listEstaciones())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    function obtenerFavoritoDeUsuarioActual(){
+        for (const favorito of favoritos) {
+          if(favorito.email === emailUsuarioActual){
+            return favorito;
+          }
+        }
+        return undefined;
+      }
 
 
     const { favoritos } = useSelector(store => store.favoritos)
 
     const { estaciones } = useSelector(store => store.estaciones)
 
+    const favoritoUsuarioActual = obtenerFavoritoDeUsuarioActual()
 
-    const estacionesId = favoritos.map(f => f.id);
-    console.log(estacionesId);
+    const estacionesFavoritos = obtenerListadoEstacionesDeFavoritos(favoritoUsuarioActual)
 
-    const estacion = estaciones.filter(e=>e.id === estacionesId[0])
-    console.log(estacion);
+    function obtenerListadoEstacionesDeFavoritos(favoritoUsuarioActual){
+        const listadoEstacionesFavoritos = [];
+        if(favoritoUsuarioActual){
+            const idsFavoritos = favoritoUsuarioActual.listadoIds
+            for (const idFavorito of idsFavoritos) {
+                for (const estacion of estaciones) {
+                    if(estacion.id === idFavorito){
+                        listadoEstacionesFavoritos.push(estacion);
+                    }
+                };
+            };
+            
+        }
+        return listadoEstacionesFavoritos;
+    }
 
 
     return (
@@ -39,8 +65,7 @@ const Favoritos = () => {
                 <span className='blue'> ACPM </span>
             </div>
             <hr />
-             {/* {
-                estaciones.map((s, index) =>
+             {estacionesFavoritos && estacionesFavoritos.map((s, index) =>
                     <section key={index}>
                         <div >
                             <h3>{s.name}</h3>
@@ -53,7 +78,7 @@ const Favoritos = () => {
                         <hr />
                     </section>
                 )
-            }  */}
+            }
         </section>
     )
 }

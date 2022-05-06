@@ -22,7 +22,7 @@ export const LandingPage = () => {
                     <div className='contenedor'>
                         <p>
                         </p>
-                    </div>    
+                    </div>  
             </div>
             </div>
         </div>

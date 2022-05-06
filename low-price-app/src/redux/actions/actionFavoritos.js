@@ -5,23 +5,20 @@ import { typesFavoritos } from "../types/types"
 const nombreEntidad = "favoritosBD"
 
 //---------------------Edit-----------//
-export const editAsync = (idRecibido, favorito) => {
+export const editAsync = (emailUsuario, favorito) => {
 	return async (dispatch) => {
 		const colleccionTraer = collection(baseDato, nombreEntidad)
-		const q = query(colleccionTraer, where("id", "==", idRecibido))
+		const q = query(colleccionTraer, where("email", "==", emailUsuario))
 		const traerDatosQ = await getDocs(q)
 		let id
 		traerDatosQ.forEach(async (docu) => {
 			id = docu.id
 		})
-		console.log(id)
 		const documenRef = doc(baseDato, nombreEntidad, id)
 		await updateDoc(documenRef, favorito)
 			.then(resp => {
 				dispatch(editSync(favorito))
-				dispatch(listAsyn())
-				console.log(resp)
-			})
+				dispatch(listAsynFavoritos())			})
 			.catch((err) => console.log(err))
 
 	}
@@ -36,30 +33,30 @@ export const editSync = (favorito) => {
 }
 
 //-------------------delete--------------------//
-export const deleteAsync = (id) => {
+export const deleteAsync = (emailUsuario) => {
 
 	return async (dispatch) => {
 		const colleccionTraer = collection(baseDato, nombreEntidad)
-		const q = query(colleccionTraer, where("id", "==", id))
+		const q = query(colleccionTraer, where("email", "==", emailUsuario))
 		const traerDatosQ = await getDocs(q)
 		traerDatosQ.forEach((docum => {
 			deleteDoc(doc(baseDato, nombreEntidad, docum.id))
 		}))
-		dispatch(deleteSync(id))
-		dispatch(listAsyn())
+		dispatch(deleteSync(emailUsuario))
+		dispatch(listAsynFavoritos())
 	}
 }
 
-export const deleteSync = (id) => {
+export const deleteSync = (emailUsuario) => {
 	return {
 		type: typesFavoritos.delete,
-		payload: id
+		payload: emailUsuario
 	}
 
 }
 
 //---------------listar----------------//
-export const listAsyn = () => {
+export const listAsynFavoritos = () => {
 	return async (dispatch) => {
 		const colleccionTraer = await getDocs(collection(baseDato, nombreEntidad))
 		const favoritos = []

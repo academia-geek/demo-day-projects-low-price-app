@@ -14,6 +14,7 @@ import { logoutAsync } from '../redux/actions/actionLogin';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { listAsyn } from '../redux/actions/actionEstaciones';
+import { listAsynFavoritos } from '../redux/actions/actionFavoritos';
 
 
 
@@ -23,15 +24,18 @@ const MapView = () => {
   const [state, setState] = useState({
     lng:JSON.parse(localStorage.getItem("lng")),
     lat:JSON.parse(localStorage.getItem("lat")),
-    zoom: 18
+    zoom: 17
   })
 
   // console.log(useLocation())
 
   const { estaciones } = useSelector(store => store.estaciones)
+  const { favoritos } = useSelector(store => store.favoritos)
 
   useEffect(() => {
+    dispatch(listAsynFavoritos())
     dispatch(listAsyn())
+    
     navigator.geolocation.getCurrentPosition(
       function (position) {
         setState({
@@ -44,7 +48,6 @@ const MapView = () => {
       },
       { enableHighAccuracy: true }
     );
-    localStorage.clear()
   },[MapContainer]);
 
   const dispatch = useDispatch();
@@ -76,13 +79,19 @@ const MapView = () => {
           <p onClick={handleLogout} className='subTitle'>Salir</p>
           <p className='pointer' onClick={handleLogout}><img  width="10%" src={salir} alt='' />  Cerrar Sesión</p>
         </section>
+        {favoritos && favoritos.map((s, index) =>
+                    <p key={index}>
+                        
+                    </p>
+                )
+            }
       </Modal>
       <MapContainer center={{ lng: JSON.parse(localStorage.getItem("lng")), lat: JSON.parse(localStorage.getItem("lat")) }} zoom={state.zoom}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Markers estaciones={estaciones} />
+        <Markers estaciones={estaciones}  favoritos={favoritos} />
         <button onClick={openModal} className='Menu'></button>
       </MapContainer>
     </div>
