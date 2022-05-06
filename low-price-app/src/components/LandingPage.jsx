@@ -27,8 +27,8 @@ export const LandingPage = () => {
                     <h5>Features</h5>
                     <h5>Reviews</h5>
                     <h5>Contact</h5>
-                    <button>Iniciar Sesion</button>
-                    <button>Registrarse</button>
+                    <button><Link to="/login">Iniciar Sesion</Link></button>
+                    <button><Link to="/register">Ir al login</Link></button>
                 </div>
             </header>
             <section className='section1'>
