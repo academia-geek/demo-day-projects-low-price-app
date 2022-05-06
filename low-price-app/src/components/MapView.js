@@ -52,6 +52,7 @@ const MapView = () => {
     dispatch(logoutAsync())
     navigate("/login")
   }
+
   
   return (
     <div>
