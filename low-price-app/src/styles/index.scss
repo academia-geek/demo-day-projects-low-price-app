@@ -14,8 +14,8 @@
 }
 
 body {
-    background-color: var(--negro);
-    color: var(--blanco);
+    background-color: var(--blanco);
+    color: var(--negro);
 }
 
 input,
@@ -31,7 +31,7 @@ img {
 }
 
 button {
-    padding: 3px 0;
+    padding: 3px 8px;
     border: 3px solid rgb(165, 164, 164);
     &:hover {
         background-color: var(--blancoTransparente);
