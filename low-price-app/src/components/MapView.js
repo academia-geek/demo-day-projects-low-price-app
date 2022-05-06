@@ -16,11 +16,17 @@ import { useNavigate } from 'react-router-dom';
 import { listAsyn } from '../redux/actions/actionEstaciones';
 
 
-const MapView = ( ) => {
+
+const MapView = () => {
   const [isOpenModal, openModal, closeModal] = useModal(false);
+  
   const [state, setState] = useState({
-    lat: '4.707151617979109', lng: '-74.22277595106928' ,
-  });
+    lng:JSON.parse(localStorage.getItem("lng")),
+    lat:JSON.parse(localStorage.getItem("lat")),
+    zoom: 18
+  })
+
+  // console.log(useLocation())
 
   const { estaciones } = useSelector(store => store.estaciones)
 
@@ -38,6 +44,7 @@ const MapView = ( ) => {
       },
       { enableHighAccuracy: true }
     );
+    localStorage.clear()
   },[MapContainer]);
 
   const dispatch = useDispatch();
@@ -46,9 +53,9 @@ const MapView = ( ) => {
     dispatch(logoutAsync())
     navigate("/login")
   }
-
+  
   return (
-      <div>
+    <div>
       <Modal isOpen={isOpenModal} closeModal={closeModal}>
         <h3 className='title'>LOW PRICE APP</h3>
         <section>
@@ -70,7 +77,7 @@ const MapView = ( ) => {
           <p className='pointer' onClick={handleLogout}><img  width="10%" src={salir} alt='' />  Cerrar Sesión</p>
         </section>
       </Modal>
-      <MapContainer center={{ lat: state.lat, lng: state.lng }} zoom={15}>
+      <MapContainer center={{ lng: JSON.parse(localStorage.getItem("lng")), lat: JSON.parse(localStorage.getItem("lat")) }} zoom={state.zoom}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -78,8 +85,7 @@ const MapView = ( ) => {
         <Markers estaciones={estaciones} />
         <button onClick={openModal} className='Menu'></button>
       </MapContainer>
-      </div>
+    </div>
   )
 }
 export default MapView
-
