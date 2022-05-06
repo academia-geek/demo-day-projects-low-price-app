@@ -80,21 +80,20 @@ export const Login = () => {
                                     </div>
                                 </button>
 
-                                <div className="auth__social-networks">
-                                    <button
-                                        type='button'
-                                        className="fb-btn"
-                                        onClick={handleFacebook}
-                                    >
-                                        <div className="google-icon-wrapper">
-                                            <img className="google-icon" src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1647906709/samples/sprint2reto2/icon-facebook_wtrxil.svg" alt="google button" />
-                                        </div>
-                                    </button>
-                                </div>
-                            </div>
-                            </div>
+                                <button
+                                    type='button'
+                                    className="fb-btn"
+                                    onClick={handleFacebook}
+                                >
+                                    <div className="google-icon-wrapper">
+                                        <img className="google-icon" src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1647906709/samples/sprint2reto2/icon-facebook_wtrxil.svg" alt="google button" />
+                                    </div>
+                                </button>
 
-                            <Link to="/register">¿Aún no te has registrado?</Link>
+                            </div>
+                        </div>
+
+                        <Link to="/register">¿Aún no te has registrado?</Link>
 
                     </Form>
                 )}
