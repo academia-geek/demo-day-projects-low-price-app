@@ -10,14 +10,12 @@ import tiempo from '../assets/ahorraTiempo.png'
 import dinero from '../assets/ahorrar-dinero.png'
 import idea from '../assets/innovacion.png'
 import reseña from '../assets/reseña.png'
-import avatarM from '../assets/avatarM.png'
-import avatarH from '../assets/avatarH.png'
 import { Carousel } from 'react-bootstrap';
 import product2 from '../assets/mapsApp.png'
+import product3 from '../assets/product30.png'
 
 export const LandingPage = () => {
     return (
-
         <div className='divGeneral'>
             <header>
                 <img alt='' src={logo} width="14%" />
@@ -51,15 +49,15 @@ export const LandingPage = () => {
       src={product2}
       alt="Second slide"
       height="446vh"    />
-
     <Carousel.Caption>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-50 m-auto"
-      src={product}
+      className="d-block w-30 m-auto"
+      src={product3}
       alt="Third slide"
+      height="446vh"
     />
     <Carousel.Caption>
     </Carousel.Caption>
@@ -117,19 +115,16 @@ export const LandingPage = () => {
                 <div className='flex'>
                     <div className='cards'>
                         <p>Lizeth Paola Delgadillo</p>
-                        <img alt='' src={avatarM} width="60px"/>
                         <small>lizdelga001@gmail.com</small>
                         <small>GitHub</small>
                     </div>
                     <div className='cards'>
                         <p>Daniel Correa</p>
-                        <img alt='' src={avatarH} width="60px"/>
                         <small>Daniel@gmail.com</small>
                         <small>GitHub</small>
                     </div>
                     <div className='cards'>
                         <p>Yineth </p>
-                        <img alt='' src={avatarM} width="60px"/>
                         <small>Yineth@gmail.com</small>
                         <small>GitHub</small>
                     </div>
