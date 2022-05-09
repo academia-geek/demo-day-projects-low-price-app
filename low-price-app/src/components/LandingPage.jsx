@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/_LandingPage.scss'
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png'
 import product from '../assets/PhoneMaps.png'
@@ -13,10 +12,10 @@ import idea from '../assets/innovacion.png'
 import reseña from '../assets/reseña.png'
 import avatarM from '../assets/avatarM.png'
 import avatarH from '../assets/avatarH.png'
+import { Carousel } from 'react-bootstrap';
+import product2 from '../assets/mapsApp.png'
 
 export const LandingPage = () => {
-    const dispatch = useDispatch()
-
     return (
 
         <div className='divGeneral'>
@@ -36,11 +35,36 @@ export const LandingPage = () => {
                 <p>Encourage collaboration and the exchange of ideas to improve the user experience. Real services focused on the performance of time and money.</p>
                 <img alt='' src="https://s03.s3c.es/imag/_v0/770x420/6/4/2/Google-maps-nueva-york.jpg" width="30%" />
             </section>
-            <section className='section2'>
-                <h2>Low Price App</h2>
-                <p>Low Price App is an application that helps you save, since it provides you with nearby gas stations, with different prices, so that you can choose your best option more quickly.</p>
-                <img alt='image aplication' src={product} />
-            </section>
+            <Carousel>
+  <Carousel.Item>
+    <img
+      className="d-block w-50 m-auto"
+      src={product}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-30 m-auto"
+      src={product2}
+      alt="Second slide"
+      height="446vh"    />
+
+    <Carousel.Caption>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-50 m-auto"
+      src={product}
+      alt="Third slide"
+    />
+    <Carousel.Caption>
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel>
             <section className='section3'>
                 <h2>HOW DOES IT WORK</h2>
                 <p>Everyone wants to save a little money when buying a product, we show you the different options and you choose the best alternative</p>
