@@ -16,3 +16,12 @@ export const typesEstaciones = {
   detail: 'detailEstacion',
   search: 'searchEstacion'
 }
+
+export const typesFavoritos = {
+  add: 'addFavorito',
+  list: 'listFavoritos',
+  edit: 'editFavorito',
+  delete: 'deleteFavorito',
+  detail: 'detailFavorito',
+  search: 'searchFavorito'
+}

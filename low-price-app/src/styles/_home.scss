@@ -1,0 +1,53 @@
+.homeTextCont {
+    margin: 1rem;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    h1{
+        text-align: center;
+    }
+    div {
+        margin: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        small{
+            border-radius: 8px;
+            padding: 8px;
+            background-color: var(--blancoTransparente);
+            color: var(--negro);
+        }
+        
+        img {
+            max-width: 250px;
+            width: 50%;
+            height: 11rem;
+        }
+        @media (max-width:500px) {
+            flex-direction: column;
+            img {
+                width: 75%;
+                height: 11rem;
+            }
+        }
+    }
+    p{
+        border-radius: 8px;
+        padding: 1rem;
+        border: 2px solid var(--blanco);
+    }
+    strong{
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    button {
+        margin: 0 auto;
+        background-color: var(--rojo);
+        width: fit-content;
+        padding: 5px;
+        a {
+            text-decoration: none;
+            color: var(--blanco);
+        }
+    }
+}

@@ -29,16 +29,16 @@
             width: 100%;
             border: 3px solid var(--blanco);
         }
-       ul{
-           text-align: left;
-       }
-       @media (min-width: 700px){
-           width: 90%;
-           display: flex;
-           div{
-               width: 100%;
-           }
-       }
+        ul{
+            text-align: left;
+        }
+        @media (min-width: 700px){
+            width: 90%;
+            display: flex;
+            div{
+                width: 100%;
+            }
+        }
     }
     .cerrarSesionTitle{
         cursor: pointer;

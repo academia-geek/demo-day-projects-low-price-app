@@ -6,6 +6,7 @@ import Home from '../components/Home';
 import List from '../components/List';
 import MapView from '../components/MapView';
 import Profile from '../components/Profile';
+import PruebaAddFavoritos from '../components/PruebaAddFavoritos';
 
 const DashboardRoute = () => {
     return (
@@ -19,6 +20,7 @@ const DashboardRoute = () => {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/favoritos" element={<Favoritos />} />
                     <Route path="/list" element={<List />} />
+                    <Route path="/prueba" element={<PruebaAddFavoritos />} />
                 </Routes>
             </>
         </div>

@@ -1,0 +1,34 @@
+#favoritos {
+    margin: 0 auto 2rem auto;
+    width: 90vw;
+
+    h2 {
+        text-align: center;
+    }
+
+    div {
+        padding: 5px 0;
+        display: flex;
+        justify-content: space-between;
+
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .indicePrecios{
+        display: flex;
+    }
+    .precios{
+        margin: 0 5px ;
+    }
+    .red {
+        color: var(--rojo);
+    }
+    .green {
+        color: var(--verde);
+    }
+    .blue {
+        color: var(--azul);
+    }
+}
