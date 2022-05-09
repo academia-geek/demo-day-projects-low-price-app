@@ -116,17 +116,23 @@ export const LandingPage = () => {
                     <div className='cards'>
                         <p>Lizeth Paola Delgadillo</p>
                         <small>lizdelga001@gmail.com</small>
-                        <small>GitHub</small>
+                        <small><a href="https://github.com/LPDelgadillo" target='_blank' rel="noreferrer">
+					<img width="50px"src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1652120654/samples/redes/img_326384_ep8nnv.png" alt="" />
+				</a></small>
                     </div>
                     <div className='cards'>
-                        <p>Daniel Correa</p>
-                        <small>Daniel@gmail.com</small>
-                        <small>GitHub</small>
+                        <p>Daniel Jose Correa</p>
+                        <small>danielcorrea3131@gmail.com</small>
+                        <small><a href="https://github.com/Daniel3132" target='_blank' rel="noreferrer">
+					<img width="50px"src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1652120654/samples/redes/img_326384_ep8nnv.png" alt="" />
+				</a></small>
                     </div>
                     <div className='cards'>
                         <p>Yineth </p>
                         <small>Yineth@gmail.com</small>
-                        <small>GitHub</small>
+                        <small><a href="https://github.com/" target='_blank' rel="noreferrer">
+					<img width="50px"src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1652120654/samples/redes/img_326384_ep8nnv.png" alt="" />
+				</a></small>
                     </div>
                 </div>
             </section>
