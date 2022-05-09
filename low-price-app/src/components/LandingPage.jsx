@@ -128,7 +128,7 @@ export const LandingPage = () => {
 				</a></small>
                     </div>
                     <div className='cards'>
-                        <p>Yineth </p>
+                        <p>Yineth Paola Duarte</p>
                         <small>Yineth@gmail.com</small>
                         <small><a href="https://github.com/" target='_blank' rel="noreferrer">
 					<img width="50px"src="https://res.cloudinary.com/dcyn2bjb9/image/upload/v1652120654/samples/redes/img_326384_ep8nnv.png" alt="" />
