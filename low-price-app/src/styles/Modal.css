@@ -24,17 +24,17 @@
     box-shadow: 10px 10px 13px -3px rgba(0, 0, 0, 0.75);
 }
 
-@media (max-width:700px) {
+@media (min-width:700px) {
     .modalContainer {
         width: 40%;
     }
 }
-@media (max-width:1000px) {
+@media (min-width:1000px) {
     .modalContainer {
         width: 30%;
     }
 }
-@media (max-width:2000px) {
+@media (min-width:2000px) {
     .modalContainer {
         width: 25%;
     }

@@ -34,7 +34,7 @@ const List = () => {
       <Table>
         <thead>
         </thead>
-        <tbody style={{color:'white'}}>
+        <tbody>
           {
             estaciones.map((p, index) => (
               <tr key={index}>
