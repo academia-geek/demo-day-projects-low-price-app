@@ -12,6 +12,14 @@
     height: 100vh;
     text-align: center;
     overflow-y: scroll;
+    a{
+        color: var(--verde);
+    }   
+    span{
+        padding: 5px;
+        width: fit-content;
+        border:  2px solid var(--blanco) 8rem solid var(--blanco);
+    }
     div {
         margin: 2rem auto;
         width: fit-content;

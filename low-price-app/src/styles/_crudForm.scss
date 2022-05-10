@@ -12,6 +12,19 @@
     input{
         width: 100%;
     }
+    .radioDiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        div{
+            display: flex;
+            align-items: center;
+            width: 10%;
+            input{
+                width: fit-content;
+            }
+        }
+    }
     input,
     button{
         border-radius: 5px;

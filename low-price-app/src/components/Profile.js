@@ -34,20 +34,23 @@ const Profile = () => {
 
 	return (
 		<section id='profile'>
-			<h1 onClick={()=>navigate('/')} className='lowPriceTitle'>Low Price</h1>
-			<hr />
+			<h1 onClick={() => navigate('/map')} className='lowPriceTitle'>Low Price</h1>
+            <hr />
 			<div>
 				<h3>{obtenerUsuarioStorage('nombre')}</h3>
 				<p>{obtenerUsuarioStorage('email')}</p>
 				<img src={obtenerUsuarioStorage('photo')} alt="" />
 			</div>
+			<span>
+				Las estaciones que se marcan como favoritas quedarán guardadas solo para este perfil
+			</span>
 			<div>
-				<Link to='/favoritos'>Favoritos</Link>
+				<Link to='/favoritos'>Ir a mis Favoritos</Link>
 			</div>
-			<span className='cerrarSesionTitle' onClick={handleLogout}>
+			<strong className='cerrarSesionTitle' onClick={handleLogout}>
 				<img style={{width:'1rem'}} src={logooutLogo} alt="" />
 				<h4>Cerrar Sesión</h4>
-			</span>
+			</strong>
 		</section>
 	)
 }

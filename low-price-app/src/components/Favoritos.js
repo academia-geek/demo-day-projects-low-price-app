@@ -56,7 +56,7 @@ const Favoritos = () => {
 
     return (
         <section id='favoritos'>
-            <h1 onClick={() => navigate('/')} className='lowPriceTitle'>Low Price</h1>
+            <h1 onClick={() => navigate('/map')} className='lowPriceTitle'>Low Price</h1>
             <hr />
             <h2>Favoritos</h2>
             <div className='indicePrecios'>
