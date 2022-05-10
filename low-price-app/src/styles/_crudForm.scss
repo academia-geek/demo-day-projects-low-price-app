@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    color: black;
     div{
         @extend .crudForm;
         margin: 0;
