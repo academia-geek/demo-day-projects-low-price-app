@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Image, Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { deleteAsync, listAsyn } from '../redux/actions/actionEstaciones';
 import Edit from './Edit';
 import '../styles/_list.scss'
 
 const List = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const [modal, setModal] = useState(false)
   const [enviarDatosModal, setEnviarDatosModal] = useState([])
@@ -16,7 +18,7 @@ const List = () => {
 
   useEffect(() => {
     dispatch(listAsyn())
-  }, [])
+  }, [modal])
 
   const editar = (id) => {
     //--------t=conseguir los datos de ese objeto con ese id--------------//
@@ -24,12 +26,12 @@ const List = () => {
 
     setModal(true)
     setEnviarDatosModal(traerLaEstacion)
-
-
   }
 
   return (
-    <div className='listaGeneral'>
+    <div>
+      <h1 onClick={() => navigate('/map')} className='lowPriceTitle'>Low Price</h1>
+            <hr />
       <Table>
         <thead>
           <tr >
@@ -46,7 +48,7 @@ const List = () => {
 
           </tr>
         </thead>
-        <tbody style={{color:'white'}}>
+        <tbody>
           {
             estaciones.map((p, index) => (
               <tr key={index}>

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Popup } from 'react-leaflet';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { obtenerUsuarioStorage } from '../helpers/LocalStorage';
 import { addAsync, editAsync } from '../redux/actions/actionFavoritos';
 
 const Popups = (props) => {
   
   const dispatch = useDispatch()
-  const { name, precio, id, favoritos } = props.data;
+  const { name, precio, id, prom, favoritos } = props.data;
+
   const emailUsuarioActual = obtenerUsuarioStorage('email')
 
   const [esFavorito, setEsFavorito] = useState(false)
@@ -63,9 +64,12 @@ const Popups = (props) => {
     <Popup>
       <h3>{name}</h3>
       
-       <p><strong>Corriente:</strong>{precio?.gasolinaCorrienteNumero}</p> 
-       <p><strong>Extra:</strong>{precio?.gasolinaExtraNumero}</p> 
-       <p><strong>ACPM:</strong>{precio?.acpmNumero}</p> 
+       <p><strong>Corriente: </strong>{precio?.gasolinaCorrienteNumero}</p> 
+       <p><strong>Extra: </strong>{precio?.gasolinaExtraNumero}</p> 
+       <p><strong>ACPM: </strong>{precio?.acpmNumero}</p> 
+       {
+       prom === true ? <p className='prom'>Promoción</p> : ''
+       }
        {esFavorito && 
         <button onClick={()=>{desmarcarFavorito()}}><strong>&#9733; Desmarcar de favoritos</strong></button>}
               {!esFavorito && 

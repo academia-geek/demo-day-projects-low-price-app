@@ -12,6 +12,21 @@
     }
     input{
         width: 100%;
+        border: 1px solid var(--negro);
+        height: 2rem;
+    }
+    .radioDiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        div{
+            display: flex;
+            align-items: center;
+            width: 10%;
+            input{
+                width: fit-content;
+            }
+        }
     }
     input,
     button{

@@ -1,16 +1,13 @@
 #favoritos {
     margin: 0 auto 2rem auto;
     width: 90vw;
-
     h2 {
         text-align: center;
     }
-
     div {
         padding: 5px 0;
         display: flex;
         justify-content: space-between;
-
         div {
             display: flex;
             flex-direction: column;
@@ -31,4 +28,12 @@
     .blue {
         color: var(--azul);
     }
+}
+.prom{
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--rojo);
+    border-radius: 3px;
+    padding: 2px;
+    color: white;
 }
