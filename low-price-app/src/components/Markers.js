@@ -6,7 +6,7 @@ import Popups from './Popups'
 const Markers = ({estaciones, favoritos}) => {
   const markers = estaciones.map((estacion, index )=> (
     <Marker key={index} position={estacion.geometry} icon={IconLocation}>
-      <Popups data={{name: estacion.name, precio: estacion.precio, id:estacion.id, favoritos: favoritos}} />
+      <Popups data={{name: estacion.name, precio: estacion.precio, id:estacion.id, prom:estacion.promotion, favoritos: favoritos}} />
     </Marker>
   ));
   return markers;

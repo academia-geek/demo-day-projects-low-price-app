@@ -19,14 +19,14 @@ const Favoritos = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    function obtenerFavoritoDeUsuarioActual(){
+    function obtenerFavoritoDeUsuarioActual() {
         for (const favorito of favoritos) {
-          if(favorito.email === emailUsuarioActual){
-            return favorito;
-          }
+            if (favorito.email === emailUsuarioActual) {
+                return favorito;
+            }
         }
         return undefined;
-      }
+    }
 
 
     const { favoritos } = useSelector(store => store.favoritos)
@@ -37,18 +37,18 @@ const Favoritos = () => {
 
     const estacionesFavoritos = obtenerListadoEstacionesDeFavoritos(favoritoUsuarioActual)
 
-    function obtenerListadoEstacionesDeFavoritos(favoritoUsuarioActual){
+    function obtenerListadoEstacionesDeFavoritos(favoritoUsuarioActual) {
         const listadoEstacionesFavoritos = [];
-        if(favoritoUsuarioActual){
+        if (favoritoUsuarioActual) {
             const idsFavoritos = favoritoUsuarioActual.listadoIds
             for (const idFavorito of idsFavoritos) {
                 for (const estacion of estaciones) {
-                    if(estacion.id === idFavorito){
+                    if (estacion.id === idFavorito) {
                         listadoEstacionesFavoritos.push(estacion);
                     }
                 };
             };
-            
+
         }
         return listadoEstacionesFavoritos;
     }
@@ -65,19 +65,23 @@ const Favoritos = () => {
                 <span className='blue'> ACPM </span>
             </div>
             <hr />
-             {estacionesFavoritos && estacionesFavoritos.map((s, index) =>
-                    <section key={index}>
-                        <div >
-                            <h3>{s.name}</h3>
-                            <div>
-                                <h4 className='red precios'>${s.precio.gasolinaCorrienteNumero}</h4>
-                                <h4 className='green precios'>${s.precio.gasolinaExtraNumero}</h4>
-                                <h4 className='blue precios'>${s.precio.acpmNumero}</h4>
-                            </div>
+            {estacionesFavoritos && estacionesFavoritos.map((s, index) =>
+                <section key={index}>
+                    <div >
+                        <h3>{s.name}
+                            {
+                                s.promotion === true ? <small style={{marginLeft:'1rem'}} className='prom'>Promo</small> : ''
+                            }
+                        </h3>
+                        <div>
+                            <h4 className='red precios'>${s.precio.gasolinaCorrienteNumero}</h4>
+                            <h4 className='green precios'>${s.precio.gasolinaExtraNumero}</h4>
+                            <h4 className='blue precios'>${s.precio.acpmNumero}</h4>
                         </div>
-                        <hr />
-                    </section>
-                )
+                    </div>
+                    <hr />
+                </section>
+            )
             }
         </section>
     )
