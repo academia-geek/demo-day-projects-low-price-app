@@ -20,21 +20,21 @@ const Edit = ({ modal }) => {
     acpm: modal.precio.acpmNumero
 
   })
-  const { description, name, gasolinaExtra, gasolinaCorriente, acpm, lat,long} = values
+  const { description, name, gasolinaExtra, gasolinaCorriente, acpm, lat, long } = values
 
   const handleSubmit = (e) => {
     e.preventDefault()
     const gasolinaExtraNumero = parseInt(gasolinaExtra)
     const gasolinaCorrienteNumero = parseInt(gasolinaCorriente)
     const acpmNumero = parseInt(acpm)
-    const latitudNumero =  parseInt(lat)
-    const longitudNumero =  parseInt(long)
+    const latitudNumero = parseInt(lat)
+    const longitudNumero = parseInt(long)
     const estacionAGuardar = {
-        id: modal.id, 
-        description: description, 
-        name: name, 
-        precio:{gasolinaExtraNumero, gasolinaCorrienteNumero, acpmNumero}, 
-        geometry:[latitudNumero, longitudNumero]
+      id: modal.id,
+      description: description,
+      name: name,
+      precio: { gasolinaExtraNumero, gasolinaCorrienteNumero, acpmNumero },
+      geometry: [latitudNumero, longitudNumero]
     }
     dispatch(editAsync(modal.id, estacionAGuardar))
     console.log(values)
