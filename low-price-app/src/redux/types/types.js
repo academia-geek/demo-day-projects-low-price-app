@@ -25,3 +25,12 @@ export const typesFavoritos = {
   detail: 'detailFavorito',
   search: 'searchFavorito'
 }
+
+export const typesOcupacionEstaciones = {
+  add: 'addOcupacionEstacion',
+  list: 'listOcupacionEstaciones',
+  edit: 'editOcupacionEstacion',
+  delete: 'deleteOcupacionEstacion',
+  detail: 'detailOcupacionEstacion',
+  search: 'searchOcupacionEstacion'
+}

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { deleteAsync, listAsyn } from '../redux/actions/actionEstaciones';
 import Edit from './Edit';
+import '../styles/_list.scss'
 
 const List = () => {
   const dispatch = useDispatch()
@@ -33,6 +34,19 @@ const List = () => {
             <hr />
       <Table>
         <thead>
+          <tr >
+            <td>Id</td>
+            <td>Nombre</td>
+            <td>Descripción</td>
+            <td>Latitud y Longitud</td>
+            <td>Precio gasolina Extra</td>
+            <td>Precio gasolina corriente</td>
+            <td>Precio acpm</td>
+            <td>
+              acciones
+            </td>
+
+          </tr>
         </thead>
         <tbody>
           {
