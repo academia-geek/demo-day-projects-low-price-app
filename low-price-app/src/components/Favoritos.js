@@ -5,13 +5,11 @@ import { listAsynFavoritos } from '../redux/actions/actionFavoritos'
 import { listAsyn as listEstaciones } from '../redux/actions/actionEstaciones'
 import { obtenerUsuarioStorage } from '../helpers/LocalStorage'
 
-
 const Favoritos = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
     const emailUsuarioActual = obtenerUsuarioStorage('email')
-
 
     useEffect(() => {
         dispatch(listAsynFavoritos())
@@ -27,7 +25,6 @@ const Favoritos = () => {
         }
         return undefined;
     }
-
 
     const { favoritos } = useSelector(store => store.favoritos)
 
@@ -53,7 +50,6 @@ const Favoritos = () => {
         return listadoEstacionesFavoritos;
     }
 
-
     return (
         <section id='favoritos'>
             <h1 onClick={() => navigate('/map')} className='lowPriceTitle'>Low Price</h1>
@@ -70,7 +66,7 @@ const Favoritos = () => {
                     <div >
                         <h3>{s.name}
                             {
-                                s.promotion === true ? <small style={{marginLeft:'1rem'}} className='prom'>Promo</small> : ''
+                                s.promotion === true ? <small style={{ marginLeft: '1rem' }} className='prom'>Promo</small> : ''
                             }
                         </h3>
                         <div>

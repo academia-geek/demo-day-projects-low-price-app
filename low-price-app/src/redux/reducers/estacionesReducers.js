@@ -1,6 +1,5 @@
 import { typesEstaciones } from "../types/types";
 
-
 const initialState = {
   estaciones: []
 }
@@ -30,5 +29,4 @@ export const estacionesReducers = (state = initialState, action) => {
     default:
       return state
   }
-
 }
