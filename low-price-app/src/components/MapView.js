@@ -65,6 +65,7 @@ const MapView = () => {
           <p className='subTitle'>General</p>
           <p className='pointer' onClick={()=>navigate('/favoritos')}><img src={favorito} alt='' />  Favoritos</p>
           <p className='pointer' onClick={()=>navigate('/crudForm')}><img src={agregar} alt=''/>   Agregar Estacion</p>
+          <p className='pointer' onClick={()=>navigate('/AgregarOcupacionEstacion')}><img src={agregar} alt=''/>   Agregar ocupación de la estación</p>
           <p className='pointer' onClick={()=>navigate('/list')}><img src={actualizar} width="8%" alt=''/>  Actualizar Precios</p>
         </section>
         <section>

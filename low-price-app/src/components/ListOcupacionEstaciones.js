@@ -29,7 +29,8 @@ const ListOcupacionEstaciones = () => {
 
   return (
     <div>
-      <h1 onClick={() => navigate('/map')} className='lowPriceTitle'>Low Price</h1>
+      <hr />
+      <center><h1 >Listado de ocupaciones</h1></center>
             <hr />
       <Table>
         <thead>
