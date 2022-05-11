@@ -83,6 +83,9 @@ const Favoritos = () => {
                 </section>
             )
             }
+            <p>Los precios mostrados en pantalla incluyen la promoción</p>
+            <p>Si eres una estacion de gasolina puedes constantemente actualizar precios y poner promociones para ganar visibilidad</p>
+            <p>(tendremos más funciones disponibles pronto)</p>
         </section>
     )
 }
