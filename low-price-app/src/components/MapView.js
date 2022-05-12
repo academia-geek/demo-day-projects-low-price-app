@@ -109,7 +109,6 @@ const MapView = () => {
         <Markers estaciones={estaciones} favoritos={favoritos} />
         <button onClick={openModal} className='Menu'></button>
       </MapContainer>
-
     </div>
   )
 }
