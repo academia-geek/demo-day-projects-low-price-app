@@ -15,19 +15,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { listAsyn } from '../redux/actions/actionEstaciones';
 import { listAsynFavoritos } from '../redux/actions/actionFavoritos';
-import { motion } from 'framer-motion'
-
-const containerVariants = {
-  hidden: {
-    x: "10vw",
-    opacity: 0,
-  },
-  show: {
-    x: "0vw",
-    opacity: 1,
-    transition: { delay: 2 },
-  },
-};
 
 const MapView = () => {
   const [isOpenModal, openModal, closeModal] = useModal(false);
@@ -37,8 +24,6 @@ const MapView = () => {
     lat: JSON.parse(localStorage.getItem("lat")),
     zoom: 17
   })
-
-  // console.log(useLocation())
 
   const { estaciones } = useSelector(store => store.estaciones)
   const { favoritos } = useSelector(store => store.favoritos)
@@ -72,7 +57,6 @@ const MapView = () => {
   return (
     <div className='contPrincipal'>
       <Modal isOpen={isOpenModal} closeModal={closeModal}>
-        <motion.div variants={containerVariants} initial="hidden" animate="show" exit="exit">
           <h3 className='title'>LOW PRICE APP</h3>
           <section>
             <p className='subTitle'>General</p>
@@ -95,11 +79,9 @@ const MapView = () => {
           </section>
           {favoritos && favoritos.map((s, index) =>
             <p key={index}>
-
             </p>
           )
           }
-        </motion.div>
       </Modal>
       <MapContainer center={{ lng: JSON.parse(localStorage.getItem("lng")), lat: JSON.parse(localStorage.getItem("lat")) }} zoom={state.zoom}>
         <TileLayer
@@ -109,7 +91,6 @@ const MapView = () => {
         <Markers estaciones={estaciones} favoritos={favoritos} />
         <button onClick={openModal} className='Menu'></button>
       </MapContainer>
-
     </div>
   )
 }
