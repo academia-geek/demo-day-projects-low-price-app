@@ -15,8 +15,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { listAsyn } from '../redux/actions/actionEstaciones';
 import { listAsynFavoritos } from '../redux/actions/actionFavoritos';
+import { motion } from 'framer-motion'
 
-
+const containerVariants = {
+  hidden: {
+      x: "10vw",
+      opacity: 0,
+  },
+  show: {
+      x: "0vw",
+      opacity: 1,
+      transition: { delay: 0.3 },
+  },
+};
 
 const MapView = () => {
   const [isOpenModal, openModal, closeModal] = useModal(false);
@@ -48,6 +59,7 @@ const MapView = () => {
       },
       { enableHighAccuracy: true }
     );
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[MapContainer]);
 
   const dispatch = useDispatch();
@@ -58,7 +70,7 @@ const MapView = () => {
   }
   
   return (
-    <div>
+    <motion.section id='detail' variants={containerVariants} initial="hidden" animate="show" exit="exit">
       <Modal isOpen={isOpenModal} closeModal={closeModal}>
         <h3 className='title'>LOW PRICE APP</h3>
         <section>
@@ -94,7 +106,7 @@ const MapView = () => {
         <Markers estaciones={estaciones}  favoritos={favoritos} />
         <button onClick={openModal} className='Menu'></button>
       </MapContainer>
-    </div>
+    </motion.section>
   )
 }
 export default MapView
