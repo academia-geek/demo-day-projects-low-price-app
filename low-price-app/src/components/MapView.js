@@ -19,22 +19,22 @@ import { motion } from 'framer-motion'
 
 const containerVariants = {
   hidden: {
-      x: "10vw",
-      opacity: 0,
+    x: "10vw",
+    opacity: 0,
   },
   show: {
-      x: "0vw",
-      opacity: 1,
-      transition: { delay: 0.3 },
+    x: "0vw",
+    opacity: 1,
+    transition: { delay: 2 },
   },
 };
 
 const MapView = () => {
   const [isOpenModal, openModal, closeModal] = useModal(false);
-  
+
   const [state, setState] = useState({
-    lng:JSON.parse(localStorage.getItem("lng")),
-    lat:JSON.parse(localStorage.getItem("lat")),
+    lng: JSON.parse(localStorage.getItem("lng")),
+    lat: JSON.parse(localStorage.getItem("lat")),
     zoom: 17
   })
 
@@ -46,7 +46,7 @@ const MapView = () => {
   useEffect(() => {
     dispatch(listAsynFavoritos())
     dispatch(listAsyn())
-    
+
     navigator.geolocation.getCurrentPosition(
       function (position) {
         setState({
@@ -59,8 +59,8 @@ const MapView = () => {
       },
       { enableHighAccuracy: true }
     );
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[MapContainer]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [MapContainer]);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -68,46 +68,49 @@ const MapView = () => {
     dispatch(logoutAsync())
     navigate("/login")
   }
-  
+
   return (
-    <motion.section id='detail' variants={containerVariants} initial="hidden" animate="show" exit="exit">
+    <div  >
       <Modal isOpen={isOpenModal} closeModal={closeModal}>
-        <h3 className='title'>LOW PRICE APP</h3>
-        <section>
-          <p className='subTitle'>General</p>
-          <p className='pointer' onClick={()=>navigate('/favoritos')}><img src={favorito} alt='' />  Favoritos</p>
-          <p className='pointer' onClick={()=>navigate('/crudForm')}><img src={agregar} alt=''/>   Agregar Estacion</p>
-          <p className='pointer' onClick={()=>navigate('/AgregarOcupacionEstacion')}><img src={agregar} alt=''/>   Agregar ocupación de la estación</p>
-          <p className='pointer' onClick={()=>navigate('/list')}><img src={actualizar} width="8%" alt=''/>  Actualizar Precios</p>
-        </section>
-        <section>
-          <p className='subTitle'>Mi Cuenta</p>
-          <p className='pointer' onClick={()=>navigate('/profile')}><img src={perfil} alt='' />  Perfil</p>
-        </section>
-        <section>
-          <p className='subTitle'>Otros</p>
-          <p className='pointer'><img src={acercaDe} alt='' />  Sobre Nosotros</p>
-        </section>
-        <section >
-          <p onClick={handleLogout} className='subTitle'>Salir</p>
-          <p className='pointer'  onClick={handleLogout}><img  width="10%" src={salir} alt='' />  Cerrar Sesión</p>
-        </section>
-        {favoritos && favoritos.map((s, index) =>
-                    <p key={index}>
-                        
-                    </p>
-                )
-            }
+        <motion.div variants={containerVariants} initial="hidden" animate="show" exit="exit">
+          <h3 className='title'>LOW PRICE APP</h3>
+          <section>
+            <p className='subTitle'>General</p>
+            <p className='pointer' onClick={() => navigate('/favoritos')}><img src={favorito} alt='' />  Favoritos</p>
+            <p className='pointer' onClick={() => navigate('/crudForm')}><img src={agregar} alt='' />   Agregar Estacion</p>
+            <p className='pointer' onClick={() => navigate('/AgregarOcupacionEstacion')}><img src={agregar} alt='' />   Agregar ocupación de la estación</p>
+            <p className='pointer' onClick={() => navigate('/list')}><img src={actualizar} width="8%" alt='' />  Actualizar Precios</p>
+          </section>
+          <section>
+            <p className='subTitle'>Mi Cuenta</p>
+            <p className='pointer' onClick={() => navigate('/profile')}><img src={perfil} alt='' />  Perfil</p>
+          </section>
+          <section>
+            <p className='subTitle'>Otros</p>
+            <p className='pointer'><img src={acercaDe} alt='' />  Sobre Nosotros</p>
+          </section>
+          <section >
+            <p onClick={handleLogout} className='subTitle'>Salir</p>
+            <p className='pointer' onClick={handleLogout}><img width="10%" src={salir} alt='' />  Cerrar Sesión</p>
+          </section>
+          {favoritos && favoritos.map((s, index) =>
+            <p key={index}>
+
+            </p>
+          )
+          }
+        </motion.div>
       </Modal>
       <MapContainer center={{ lng: JSON.parse(localStorage.getItem("lng")), lat: JSON.parse(localStorage.getItem("lat")) }} zoom={state.zoom}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Markers estaciones={estaciones}  favoritos={favoritos} />
+        <Markers estaciones={estaciones} favoritos={favoritos} />
         <button onClick={openModal} className='Menu'></button>
       </MapContainer>
-    </motion.section>
+
+    </div>
   )
 }
 export default MapView
