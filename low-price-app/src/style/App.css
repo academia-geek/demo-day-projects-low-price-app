@@ -1,4 +1,7 @@
 .leaflet-container{
+    /* width: 90%;
+    height: 80vh;
+    margin: 5%; */
     width: 100%;
     height: 100vh;
 }
@@ -18,3 +21,7 @@
     cursor: pointer;
     border-radius: 5px;
 }
+/* .contPrincipal{
+    background-color: rgb(31, 127, 212);
+    height: 100vh;
+} */

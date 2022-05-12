@@ -70,7 +70,7 @@ const MapView = () => {
   }
 
   return (
-    <div  >
+    <div className='contPrincipal'>
       <Modal isOpen={isOpenModal} closeModal={closeModal}>
         <motion.div variants={containerVariants} initial="hidden" animate="show" exit="exit">
           <h3 className='title'>LOW PRICE APP</h3>

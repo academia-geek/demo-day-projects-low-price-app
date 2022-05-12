@@ -20,8 +20,7 @@
     min-height: 100vh;
     overflow-y: auto;
     padding: 2rem;
-    background-color: rgb(103, 100, 100);
-    color: white;
+    background-color: #36B6FA;
     box-shadow: 10px 10px 13px -3px rgba(0, 0, 0, 0.75);
 }
 
@@ -37,7 +36,7 @@
 }
 @media (min-width:2000px) {
     .modalContainer {
-        width: 25%;
+        width: 20%;
     }
 }
 
@@ -52,15 +51,18 @@
 .title {
     margin-top: 20%;
     text-align: center;
+    color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 section {
     border-bottom: 1px solid white;
+    color: white;
 }
 
 .subTitle {
     font-size: 22px;
+    color: white;
 }
 
 .pointer {

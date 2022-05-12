@@ -1,11 +1,18 @@
+.fondo{
+    background-image: url(../assets/giftAgregar.gif);
+    color: var(--negro);
+    height: 100vh;
+}
 .crudForm{
+    background-color: #36B6FA;
     margin: 1.5rem auto ;
-    width: 60vw;
+    width: 30vw;
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    color: black;
+    align-items: center;
+    padding: 50px;
     div{
         @extend .crudForm;
         margin: 0;
@@ -33,6 +40,13 @@
         border-radius: 5px;
     }
     button{
-        background-color: var(--rojo);
+        background-color: var(--amarillo);
+        padding: 5px 15px;
     }
+}
+.btnsNav{
+        margin-left: 45%;
+        .btnNav{
+            margin-left: 30px;
+        }
 }

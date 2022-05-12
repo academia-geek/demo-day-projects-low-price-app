@@ -6,6 +6,7 @@ import { deleteAsync, listAsyn } from '../redux/actions/actionEstaciones';
 import Edit from './Edit';
 import '../styles/_list.scss'
 
+
 const List = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
