@@ -58,7 +58,7 @@ const MapView = () => {
   }
   
   return (
-    <div>
+    <div className='contPrincipal'>
       <Modal isOpen={isOpenModal} closeModal={closeModal}>
         <h3 className='title'>LOW PRICE APP</h3>
         <section>

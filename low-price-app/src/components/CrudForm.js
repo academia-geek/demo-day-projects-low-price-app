@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux'
 import Swal from 'sweetalert2';
 import { addAsync } from '../redux/actions/actionEstaciones';
 import uuid from 'react-uuid';
+import { useNavigate } from 'react-router-dom'
+import atras from '../assets/atras.png'
+import home from '../assets/home.png'
 
 const CrudForm = () => {
     const dispatch = useDispatch()
@@ -18,7 +21,7 @@ const CrudForm = () => {
     })
 
     const { description, name, gasolinaExtra, gasolinaCorriente, acpm, lat,long} = values
-
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -26,8 +29,8 @@ const CrudForm = () => {
         const gasolinaExtraNumero = parseInt(gasolinaExtra)
         const gasolinaCorrienteNumero = parseInt(gasolinaCorriente)
         const acpmNumero = parseInt(acpm)
-        const latitudNumero = parseFloat(lat) 
-        const longitudNumero = parseFloat(long)  
+        const latitudNumero = JSON.parse(localStorage.getItem("lat"))
+        const longitudNumero = JSON.parse(localStorage.getItem("lng"))
         const estacionAGuardar = {
             id: id, 
             description: description, 
@@ -38,30 +41,36 @@ const CrudForm = () => {
         console.log(estacionAGuardar)
         dispatch(addAsync(estacionAGuardar))
         reset()
-
         Swal.fire({
             title: 'Agregado!',
             text: 'La estación fue agregada',
         })
+        
+        navigate('/map')
     }
 
     return (
-        <form onSubmit={handleSubmit} className="crudForm">
-            <h4>Agregar Estacion</h4>
-            <div>
-                <input type="text" name="name" placeholder="name" value={name} onChange={handleInputChange} />
-                <input type="text" name="description" placeholder="description" value={description} onChange={handleInputChange} />
-                <input type="number" name="lat" placeholder="lat" value={lat} onChange={handleInputChange} />
-                <input type="number" name="long" placeholder="long" value={long} onChange={handleInputChange} />
-                <input type="number" name="gasolinaExtra" placeholder="gasolinaExtra" value={gasolinaExtra} onChange={handleInputChange} />
-                <input type="number" name="gasolinaCorriente" placeholder="gasolinaCorriente" value={gasolinaCorriente} onChange={handleInputChange} />
-                <input type="number" name="acpm" placeholder="acpm" value={acpm} onChange={handleInputChange} />
+        <div className='fondo'>
+            
+            <form onSubmit={handleSubmit} className="crudForm">
+                <h4>Agregar Estacion</h4>
+                <div>
+                    <input type="text" name="name" placeholder="name" value={name} onChange={handleInputChange} />
+                    <input type="text" name="description" placeholder="description" value={description} onChange={handleInputChange} />
+                    <input type="number" name="gasolinaExtra" placeholder="gasolinaExtra" value={gasolinaExtra} onChange={handleInputChange} />
+                    <input type="number" name="gasolinaCorriente" placeholder="gasolinaCorriente" value={gasolinaCorriente} onChange={handleInputChange} />
+                    <input type="number" name="acpm" placeholder="acpm" value={acpm} onChange={handleInputChange} />
+                </div>
+                <hr />
+                <button type="submit">
+                    <span>Agregar</span>
+                </button>
+            </form>
+            <div className='btnsNav'>
+                <button className='btnNav' onClick={() => navigate('/map')}><img alt='' src={atras}  width="50px"/></button>
+                <button className='btnNav' onClick={() => navigate('/')}><img alt='' src={home} width="50px"/></button>
             </div>
-            <hr />
-            <button type="submit">
-                <span>Agregar</span>
-            </button>
-        </form>
+        </div>
     )
 }
 
