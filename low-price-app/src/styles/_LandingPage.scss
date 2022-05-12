@@ -30,14 +30,14 @@
         }
 
         .btnI {
-            width: 215px;
+            width: 180px;
             margin-left: 40px;
             margin-right: 50px;
-            color: #000000;
+            color: #343434;
         }
 
         .btnR {
-            color: #000000;
+            color: #343434;
         }
 
     }
@@ -75,6 +75,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        h3{
+            color: #F25041;
+        }
         .contCards {
             display: flex;
             flex-wrap: wrap;
@@ -95,7 +98,10 @@
                     -ms-transform: scale(1.1);
                     -o-transform: scale(1.1);
                     transform: scale(1.1);
-                    box-shadow: 2px 0px 26px 1px #000000;
+                    box-shadow: 2px 0px 26px 1px #343434;
+                }
+                p{
+                    color: #343434;
                 }
             }
         }
