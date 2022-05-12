@@ -7,6 +7,8 @@ import uuid from 'react-uuid';
 import { useNavigate } from 'react-router-dom'
 import atras from '../assets/atras.png'
 import home from '../assets/home.png'
+import { logoutAsync } from '../redux/actions/actionLogin';
+import cerrarS from '../assets/cerrar-sesion2.png'
 
 const CrudForm = () => {
     const dispatch = useDispatch()
@@ -23,6 +25,12 @@ const CrudForm = () => {
 
     const { description, name, gasolinaExtra, gasolinaCorriente, acpm, promotion} = values
     const navigate = useNavigate()
+
+    const handleLogout = () => {
+        dispatch(logoutAsync())
+        navigate("/login")
+    }
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -51,6 +59,7 @@ const CrudForm = () => {
         
         navigate('/map')
     }
+    
 
     return (
         <div className='fondo'>
@@ -72,6 +81,7 @@ const CrudForm = () => {
             <div className='btnsNav'>
                 <button className='btnNav' onClick={() => navigate('/map')}><img alt='' src={atras}  width="50px"/></button>
                 <button className='btnNav' onClick={() => navigate('/')}><img alt='' src={home} width="50px"/></button>
+                <button className='btnNav' onClick={handleLogout}><img alt='' src={cerrarS} width="50px" /></button>
             </div>
         </div>
     )

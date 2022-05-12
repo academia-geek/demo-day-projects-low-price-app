@@ -70,7 +70,7 @@ export const LandingPage = () => {
             <section className='sect2'>
                 <h3>Beneficios de utilizar nuestra App</h3>
                 <div className='flex'>
-                    <p> <img alt='' src={relax} width="50px" />   Te estresas menos</p>
+                    <p> <img alt='' src={relax} width="65px" />   Te estresas menos</p>
                     <p> <img alt='' src={dinero} width="55px" />   Ahorras dinero</p>
                     <p> <img alt='' src={tiempo} width="50px" />   Ahorras Tiempo</p>
                 </div>
