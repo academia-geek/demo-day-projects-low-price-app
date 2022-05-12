@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import 'leaflet/dist/leaflet.css'
 import logo from '../assets/logo2.png'
+import carro from '../assets/carroMovimiento.gif'
 
 
 const Home = () => {
@@ -39,14 +40,15 @@ const Home = () => {
       </div>
       <hr />
       <div>
-      <p>El tiempo y el dinero que gastamos en dirigirnos a una estacion de gasolina y no encontrar el producto indicado o el precio justo, pueden ser situaciones molestas para quien tiene un vehiculo.
-      </p><p> Low Price App es una aplicacion que busca hacerte la vida mas comoda, ya que te proporciona las estaciones cercanas a tu ubicacion, algunos de los productos que ofrecen  y su precio, para que seas tú quien decida cual es la mejor alternativa.</p>
+      <p>El tiempo y el dinero que gastamos en dirigirnos a una estacion de gasolina y no encontrar el producto indicado o el precio justo, pueden ser situaciones molestas para quien tiene un vehiculo.</p>
+      <p> Low Price App es una aplicacion que busca hacerte la vida mas comoda, ya que te proporciona las estaciones cercanas a tu ubicacion, algunos de los productos que ofrecen  y su precio, para que seas tú quien decida cual es la mejor alternativa.</p>
       </div>
       <strong>Somos una aplicacion que piensa en ti y en tu economía. </strong>
       <button>
         <Link to={{
           pathname: '/map',
         }}>Ver mi Ubicación</Link></button>
+        <img alt='' src={carro} width="150px"/>
     </section>
   )
 }

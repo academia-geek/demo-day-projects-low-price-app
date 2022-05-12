@@ -14,6 +14,9 @@ import click from '../assets/giftClick.gif'
 import perfil1 from '../assets/usuario-icon.png'
 import perfil2 from '../assets/usuario-icon.png'
 import perfil3 from '../assets/usuario-icon.png'
+import agregar from '../assets/agregarEstacion.png'
+import like from '../assets/gipftEscribir.gif'
+import actualizaP from '../assets/actualizarInfo.png'
 
 
 export const LandingPage = () => {
@@ -58,11 +61,11 @@ export const LandingPage = () => {
                     </div>
                     <div className='card'>
                         <p>Actualiza precios</p>
-                        <img alt='' src={comparar} width="250px" />
+                        <img alt='' src={actualizaP} height="210px" />
                     </div>
                     <div className='card'>
                         <p>Agrega una nueva estación</p>
-                        <img alt='' src={comparar} width="250px" />
+                        <img alt='' src={agregar} height="175px" />
                     </div>
                 </div>
                 <img alt='' src={click} width="100px" />
@@ -76,23 +79,25 @@ export const LandingPage = () => {
                 </div>
             </section>
 
-            <section className='experiencias'>
+            <section className='sect2' >
+                <h3>Reseñas de nuestros usuarios</h3>
+                <div className='experiencias'>
                 <div>
                     <div>
                         <img src={perfil1} alt="" />
                         <div>
                             <h4>Martha Hernández</h4>
+                            <img alt='' src={like}/>
                         </div>
                     </div>
-                    <p>
-                        "Me ha resultado muy útil esta aplicación para tener referencias de estaciones que no conocía."
-                    </p>
+                    <p>"Me ha resultado muy útil esta aplicación para tener referencias de estaciones que no conocía."</p>
                 </div>
                 <div>
                     <div>
                         <img src={perfil2} alt="" />
                         <div>
                             <h4>Santiago Torres</h4>
+                            <img alt='' src={like}/>
                         </div>
                     </div>
                     <p>"Ahora siempre que quiero tanquear mi carro pienso primero en Low Price."</p>
@@ -102,10 +107,11 @@ export const LandingPage = () => {
                         <img src={perfil3} alt="" />
                         <div>
                             <h4>Luisa García</h4>
+                            <img alt='' src={like}/>
                         </div>
                     </div>
                     <p>"Me encanta el hecho de que seamos nosotros mismos los que damos informacion a la app, así hay referencias reales para no ser estafada."</p>
-
+                </div>
                 </div>
             </section>
 

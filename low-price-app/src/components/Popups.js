@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { obtenerUsuarioStorage } from '../helpers/LocalStorage';
 import { addAsync, editAsync } from '../redux/actions/actionFavoritos';
 import { listAsynOcupacionEstaciones } from '../redux/actions/actionOcupacionEstaciones';
+import actualizar from '../assets/boton-actualizar.png'
 
 const Popups = (props) => {
   
@@ -116,6 +117,8 @@ const Popups = (props) => {
         <button onClick={()=>{desmarcarFavorito()}}><strong>&#9733; Desmarcar de favoritos</strong></button>}
               {!esFavorito && 
         <button onClick={()=>{marcarFavorito()}}><strong>&#9734; Marcar como favorito</strong></button>} 
+      <button className='btnActualizarPopUp'><img  alt='' src={actualizar} width="30px" />
+      Actualizar</button>
     </Popup>
   )
 }

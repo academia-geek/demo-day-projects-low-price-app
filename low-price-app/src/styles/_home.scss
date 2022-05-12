@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: #77c3ec;
     h1{
         text-align: center;
         color: rgb(219, 11, 11);
@@ -26,6 +27,17 @@
             max-width: 200px;
             width: 30%;
             height: 10rem;
+            animation: move 3s linear infinite;
+            @keyframes move {
+                0% {
+                    transform: translateX(10px)
+                }
+                50% {
+                    transform: translateX(0px)
+                }
+                100% {
+                    transform: translateX(10px)
+                }
         }
         @media (max-width:500px) {
             flex-direction: column;
@@ -40,8 +52,11 @@
         padding: 1rem;
         margin-left: 5%;
         margin-right: 5%;
-        border: 2px solid var(--negro);
+        background-color:#d1e7f4;
+        // border: 2px solid var(--negro);
+        box-shadow: -1px 1px 12px 1px rgba(0,0,0,0.75);
         min-height: 10rem;
+        }
     }
     strong{
         text-align: center;
@@ -56,5 +71,20 @@
             text-decoration: none;
             color: var(--blanco);
         }
+    }
+    img{
+        margin: 0 auto;
+        animation: movimiento 6s linear infinite;
+        @keyframes movimiento {
+            0% {
+                transform: translateX(100%)
+            }
+            50% {
+                transform: translateX(0px)
+            }
+            100% {
+                transform: translateX(100%)
+            }
+    }
     }
 }

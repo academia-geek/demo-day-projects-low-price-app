@@ -22,7 +22,7 @@ const MapView = () => {
   const [state, setState] = useState({
     lng: JSON.parse(localStorage.getItem("lng")),
     lat: JSON.parse(localStorage.getItem("lat")),
-    zoom: 17
+    zoom: 18
   })
 
   const { estaciones } = useSelector(store => store.estaciones)
@@ -63,7 +63,6 @@ const MapView = () => {
             <p className='pointer' onClick={() => navigate('/favoritos')}><img src={favorito} alt='' />  Favoritos</p>
             <p className='pointer' onClick={() => navigate('/crudForm')}><img src={agregar} alt='' />   Agregar Estacion</p>
             <p className='pointer' onClick={() => navigate('/AgregarOcupacionEstacion')}><img src={agregar} alt='' />   Agregar ocupación de la estación</p>
-            <p className='pointer' onClick={() => navigate('/list')}><img src={actualizar} width="8%" alt='' />  Actualizar Precios</p>
           </section>
           <section>
             <p className='subTitle'>Mi Cuenta</p>
