@@ -33,17 +33,17 @@ const Home = () => {
 
   return (
     <section className='homeTextCont'>
-      <h1>Bienvenido a Low Price App</h1>
+      <h1>¡Bienvenido a Low Price App!</h1>
       <div>
         <img alt='' src={logo} />
-        <small>Recuerda que para tener una mejor experiencia de usuario,  debes darnos permisos para acceder a tu ubicacion; asi sabremos en donde estas y podremos mostrarte las estaciones cercanas</small>
+        <small>Recuerda que para tener una mejor experiencia de usuario,  debes darnos permisos para acceder a tu ubicación; así sabremos en dónde estás y podremos mostrarte las estaciones cercanas.</small>
       </div>
       <hr />
       <div>
-      <p>El tiempo y el dinero que gastamos en dirigirnos a una estacion de gasolina y no encontrar el producto indicado o el precio justo, pueden ser situaciones molestas para quien tiene un vehiculo.</p>
-      <p> Low Price App es una aplicacion que busca hacerte la vida mas comoda, ya que te proporciona las estaciones cercanas a tu ubicacion, algunos de los productos que ofrecen  y su precio, para que seas tú quien decida cual es la mejor alternativa.</p>
+      <p>El tiempo y el dinero que gastamos en dirigirnos a una estación de gasolina y no encontrar el producto indicado o el precio justo, pueden ser situaciones molestas para quien tiene un vehiculo.</p>
+      <p> Low Price App es una aplicación que busca hacerte la vida más cómoda, ya que te proporciona las estaciones cercanas a tu ubicación, algunos de los productos que ofrecen  y su precio, para que seas tú quien decida cual es la mejor alternativa.</p>
       </div>
-      <strong>Somos una aplicacion que piensa en ti y en tu economía. </strong>
+      <strong>Somos una aplicación que piensa en ti y en tu economía. </strong>
       <button>
         <Link to={{
           pathname: '/map',

@@ -51,6 +51,7 @@ const Favoritos = () => {
     }
 
     return (
+        <div className='generalFavoritos'>
         <section id='favoritos'>
             <h1 onClick={() => navigate('/map')} className='lowPriceTitle'>Low Price</h1>
             <hr />
@@ -83,6 +84,7 @@ const Favoritos = () => {
             <p>Si eres una estacion de gasolina puedes constantemente actualizar precios y poner promociones para ganar visibilidad</p>
             <p>(tendremos más funciones disponibles pronto)</p>
         </section>
+        </div>
     )
 }
 

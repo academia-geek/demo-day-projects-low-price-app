@@ -3,6 +3,7 @@ import { Button, Image, Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { listAsyn } from '../redux/actions/actionEstaciones';
+import '../styles/_listaOcupacionEstaciones.scss';
 import { deleteAsyncOcupacionEstacion, listAsynOcupacionEstaciones } from '../redux/actions/actionOcupacionEstaciones';
 
 const ListOcupacionEstaciones = () => {
@@ -28,14 +29,14 @@ const ListOcupacionEstaciones = () => {
 }
 
   return (
-    <div>
+    <div className='general1'>
+    <div className='general'>
       <hr />
       <center><h1 >Listado de ocupaciones</h1></center>
             <hr />
       <Table>
         <thead>
           <tr >
-            <td>Código</td>
             <td>Nombre estacion</td>
             <td>Ocupacion</td>
             <td>Fecha de registro</td>
@@ -49,7 +50,7 @@ const ListOcupacionEstaciones = () => {
           {
             ocupacionEstaciones && ocupacionEstaciones.map((p, index) => (
               <tr key={index}>
-                <td>{p.codigo}</td>
+                
                 <td>{obtenerEstacionDelId(p.estacion)}</td>
                 <td>{p.ocupacion}</td>
                 <td>{new Intl.DateTimeFormat('es-Co', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(p.fecha)}</td>
@@ -64,6 +65,7 @@ const ListOcupacionEstaciones = () => {
 
         </tbody>
       </Table>
+    </div>
     </div>
   );
 };

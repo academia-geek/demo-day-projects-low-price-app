@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { addAsyncOcupacionEstacion } from '../redux/actions/actionOcupacionEstaciones';
 import { listAsyn } from '../redux/actions/actionEstaciones';
 import { Form, Button, Image } from 'react-bootstrap';
+import '../styles/_listaOcupacionEstaciones.scss';
 import ListOcupacionEstaciones from './ListOcupacionEstaciones';
 
 const AgregarOcupacionEstacion = () => {
@@ -48,7 +49,7 @@ const AgregarOcupacionEstacion = () => {
     }
 
     return (
-        <div>
+        <div className='general'>
             <h1 onClick={() => navigate('/map')} className='lowPriceTitle'>Low Price</h1>
             <hr />
              <Form onSubmit={handleSubmit} margin={50}>

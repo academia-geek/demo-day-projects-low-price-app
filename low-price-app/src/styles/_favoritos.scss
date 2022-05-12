@@ -1,6 +1,23 @@
+.generalFavoritos{
+    background-image: url(../assets/giftAgregar.gif);
+    color: var(--negro);
+}
+.lowPriceTitle{
+    color: #F25041;   
+}
+
 #favoritos {
     margin: 0 auto 2rem auto;
-    width: 90vw;
+    width: 70vw;
+    margin-top: 2%;
+    background-image: url(../assets/waveMirandoHaciaAbajo.svg);
+    background-repeat: no-repeat;
+    p{
+        font-weight: bold;
+        background-color: #F25041;
+        border-radius: 1rem;
+    }
+    
     h2 {
         text-align: center;
     }

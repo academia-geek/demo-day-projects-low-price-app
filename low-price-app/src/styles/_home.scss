@@ -3,11 +3,13 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #77c3ec;
+    background-image: url(../assets/waveMirandoHaciaAbajo.svg);
+    background-repeat: no-repeat;
     h1{
         text-align: center;
-        color: rgb(219, 11, 11);
+        color: #F25041;
         margin-top: 2%;
+        font-weight: bold;
     }
     div {
         margin-left: 5%;
@@ -19,14 +21,17 @@
             width: 80%;
             border-radius: 8px;
             padding: 8px;
-            background-color: var(--blancoTransparente);
+            background-color:#d1e7f4;
+            box-shadow: -1px 1px 12px 1px rgba(0,0,0,0.75);
+            font-weight: bold;
             color: var(--negro);
+            
         }
         
         img {
-            max-width: 200px;
-            width: 30%;
-            height: 10rem;
+            max-width: 180px;
+            width: 25%;
+            height: 9rem;
             animation: move 3s linear infinite;
             @keyframes move {
                 0% {
@@ -50,6 +55,7 @@
     p{
         border-radius: 8px;
         padding: 1rem;
+        margin-top: 0;
         margin-left: 5%;
         margin-right: 5%;
         background-color:#d1e7f4;
@@ -67,6 +73,9 @@
         background-color: var(--azul);
         width: fit-content;
         padding: 5px;
+        &:hover{
+            background-color: #F25041;
+        }
         a {
             text-decoration: none;
             color: var(--blanco);

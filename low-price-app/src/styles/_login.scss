@@ -1,7 +1,8 @@
 .Cont{
     width: 100vw;
     height: 100vh;
-    background-image: url("https://res.cloudinary.com/dsocuaabs/image/upload/v1651594617/Amazonas/y6szafvula3kzrhzsayv.png");
+    background-image: url(../assets/waveMirandoHaciaAbajo.svg);
+    color: black;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -20,25 +21,25 @@
     border-radius: 5px;
     h2{
         margin-bottom: 2rem ;
-        color: var(--rojo);
+        color: #F25041;
     }
     input{
         padding: 5px;
         border-radius: 5px;
     }
     div {
-        color: var(--rojo);
+        color: #F25041;
         font-style: italic;
     }
     button {
-        background-color: var(--rojo);
+        background-color: #F25041;
         color: var(--blanco);
         margin: 1.5rem auto 0 auto;
         width: 95%;
         padding: 1%;
         border: none;
         &:hover{
-            background-color: rgb(56, 51, 51);
+            background-color: #36b6fa;
         }
     }
     @media (min-width:700px) {
