@@ -24,7 +24,7 @@ const Nosotros = () => {
             <p>Desarrolladora Front-End</p>
         </div>
         <div>
-            <img className='imgD'src={Yineth} alt="" />
+            <img className='imgY'src={Yineth} alt="" />
             <p>Yineth Paola Duarte</p>
             <p>Desarrolladora Front-End</p>
         </div>
