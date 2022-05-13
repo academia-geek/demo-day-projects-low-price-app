@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
+import Swal from 'sweetalert2';
 import { useForm } from '../hooks/useForm';
 import { editAsync } from '../redux/actions/actionEstaciones';
 
 const EstacionActualizar = ({ estacion }) => {
     const dispatch = useDispatch();
 
-    const [values, handleInputChange ] = useForm({
+    const [values, handleInputChange] = useForm({
         description: estacion.description,
         name: estacion.name,
         gasolinaExtra: estacion.precio.gasolinaExtraNumero,
@@ -15,32 +16,45 @@ const EstacionActualizar = ({ estacion }) => {
         promotion: estacion.promotion,
     })
 
-    const { name, description, gasolinaExtra, gasolinaCorriente, acpm, promotion } = values;
- 
+    const [promotion, setpromotion] = useState(estacion.promotion)
+
+    const { name, description, gasolinaExtra, gasolinaCorriente, acpm } = values;
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log(promotion);
+        let promotionValue;
+        if (promotion === undefined) {
+            promotionValue = false
+        } else {
+            promotionValue = promotion
+        }
         const gasolinaExtraNumero = parseInt(gasolinaExtra)
         const gasolinaCorrienteNumero = parseInt(gasolinaCorriente)
         const acpmNumero = parseInt(acpm)
-        const latitudNumero = JSON.parse(localStorage.getItem("lat"))
-        const longitudNumero = JSON.parse(localStorage.getItem("lng"))
         const estacionAGuardar = {
             id: estacion.id,
             description: description,
             name: name,
             precio: { gasolinaExtraNumero, gasolinaCorrienteNumero, acpmNumero },
-            geometry: [latitudNumero, longitudNumero],
-            promotion: promotion
+            geometry: estacion.geometry,
+            promotion: promotionValue
         }
         console.log(estacionAGuardar);
         dispatch(editAsync(estacion.id, estacionAGuardar));
-    } 
+
+        Swal.fire({
+            title: 'Agregado!',
+            text: 'Estacion Actualizada',
+            icon:'success'
+        })
+    }
 
     return (
         <div>
             <div >
                 <div >
-                     <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>
                         <h1> Actualizar</h1>
                         <hr />
                         <div>
@@ -99,20 +113,22 @@ const EstacionActualizar = ({ estacion }) => {
                             </div>
                         </div>
                         <div>
-                            <label>Promocion</label>
+                            <label>Promocion </label>
+                            <span> Si / No</span>
                             <div >
                                 <input
-                                    type="text"
+                                    type="reset"
                                     name="promotion"
-                                    value={promotion}
-                                    onChange={handleInputChange}
+                                    value={promotion === true ? 'Si' : 'No'}
+                                    onClick={()=> promotion === true ? setpromotion(false)  : setpromotion(true)  }
                                 />
                             </div>
                         </div>
+
                         <button className='btnGuardar' type="submit" >
                             Guardar
                         </button>
-                    </form> 
+                    </form>
                 </div>
             </div>
         </div>
