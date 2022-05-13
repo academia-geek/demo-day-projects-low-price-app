@@ -33,6 +33,7 @@ const Profile = () => {
 	}
 
 	return (
+		<div className='divProfile'>
 		<section id='profile'>
 			<h1 onClick={() => navigate('/map')} className='lowPriceTitle'>Low Price</h1>
             <hr />
@@ -42,7 +43,7 @@ const Profile = () => {
 				<img src={obtenerUsuarioStorage('photo')} alt="" />
 			</div>
 			<span>
-				Las estaciones que se marcan como favoritas quedarán guardadas solo para este perfil
+				Las estaciones que se marcan como favoritas quedarán guardadas solo para este perfil.
 			</span>
 			<div>
 				<Link to='/favoritos'>Ir a mis Favoritos</Link>
@@ -52,6 +53,7 @@ const Profile = () => {
 				<h4>Cerrar Sesión</h4>
 			</strong>
 		</section>
+		</div>
 	)
 }
 

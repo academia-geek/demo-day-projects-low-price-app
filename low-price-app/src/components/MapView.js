@@ -70,7 +70,7 @@ const MapView = () => {
           </section>
           <section>
             <p className='subTitle'>Otros</p>
-            <p className='pointer'><img src={acercaDe} alt='' />  Sobre Nosotros</p>
+            <p className='pointer'onClick={() => navigate('/nosotros')}><img src={acercaDe} alt='' />  Sobre Nosotros</p>
           </section>
           <section >
             <p onClick={handleLogout} className='subTitle'>Salir</p>

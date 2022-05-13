@@ -7,8 +7,6 @@ import tiempo from '../assets/ahorraTiempo.png'
 import dinero from '../assets/ahorrar-dinero.png'
 import relax from '../assets/relax.png'
 import comparar from '../assets/compararP.png'
-import registrate from '../assets/registrar.png'
-import iniciaSesion from '../assets/iniciar.png'
 import ubicacion from '../assets/giftUbicacion.gif'
 import click from '../assets/giftClick.gif'
 import perfil1 from '../assets/usuario-icon.png'
@@ -17,6 +15,8 @@ import perfil3 from '../assets/usuario-icon.png'
 import agregar from '../assets/agregarEstacion.png'
 import like from '../assets/gipftEscribir.gif'
 import actualizaP from '../assets/actualizarInfo.png'
+import registrarse from '../assets/registro2.png'
+import iniciarSesion from '../assets/inicioSesion2.png'
 
 
 export const LandingPage = () => {
@@ -34,8 +34,8 @@ export const LandingPage = () => {
                 <div className='flex'>
                     <img alt='' src={imgMapa} />
                     <div className='descripcion'>
-                        <h3>Compara los precios de las estaciones de gasolina cercanas</h3>
-                        <p>Fomentá la colaboración y el intercambio de ideas para mejorar la experiencia del usuario. Servicios reales enfocados en el rendimiento del tiempo y el dinero del usuario</p>
+                        <h3>Ayudamos a tomar buenas decisiones</h3>
+                        <p>Fomenta la colaboración y el intercambio de ideas para mejorar la experiencia del usuario. Servicios reales enfocados en el rendimiento del tiempo y el dinero del usuario</p>
                     </div>
                 </div>
                 <p>Todo el mundo quiere ahorrar un poco de dinero a la hora de comprar un producto, nosotros te mostramos las diferentes opciones y tú eliges la mejor alternativa</p>
@@ -45,11 +45,11 @@ export const LandingPage = () => {
                 <div className='contCards'>
                     <div className='card'>
                         <p>Registrate</p>
-                        <img alt='' src={registrate} width="250px" />
+                        <img alt='' src={registrarse} width="250px" />
                     </div>
                     <div className='card'>
                         <p>Inicia Sesión</p>
-                        <img alt='' src={iniciaSesion} width="250px" />
+                        <img alt='' src={iniciarSesion} width="250px" />
                     </div>
                     <div className='card'>
                         <p>Accede a tu Ubicacion</p>

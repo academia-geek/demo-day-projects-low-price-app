@@ -7,6 +7,7 @@ import Home from '../components/Home';
 import List from '../components/List';
 import ListOcupacionEstaciones from '../components/ListOcupacionEstaciones';
 import MapView from '../components/MapView';
+import Nosotros from '../components/Nosotros';
 import Profile from '../components/Profile';
 import PruebaAddFavoritos from '../components/PruebaAddFavoritos';
 
@@ -22,6 +23,7 @@ const DashboardRoute = () => {
                     <Route path="/ListOcupacionEstaciones" element={<ListOcupacionEstaciones />} />
                     <Route path='/map' element={<MapView/>}/>
                     <Route path="/profile" element={<Profile />} />
+                    <Route path="/nosotros" element={<Nosotros />} />
                     <Route path="/favoritos" element={<Favoritos />} />
                     <Route path="/list" element={<List />} />
                     <Route path="/prueba" element={<PruebaAddFavoritos />} />

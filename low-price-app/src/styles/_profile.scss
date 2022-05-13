@@ -2,25 +2,24 @@
     cursor: pointer;
     text-align: center;
     padding-top: 1rem;
-    font-style: italic;
+    color: #F25041;
+}
+.divProfile{
+    background-image: url(../assets/giftAgregar.gif);
 }
 
 #profile {
-    background-color:#bad9e9;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 100vw;
-    height: 100vh;
+    background-color: #36b6fa;
+    margin-top: 4%;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 4%;
     text-align: center;
-    overflow-y: scroll;
+    
     a{
-        color: var(--verde);
+        color: var(--amarillo);
     }   
-    span{
-        padding: 5px;
-        width: fit-content;
-        border:  2px solid var(--blanco) 8rem solid var(--blanco);
-        font-style: italic;
-    }
+    
     div {
         margin: 2rem auto;
         width: fit-content;
@@ -51,6 +50,6 @@
     }
     .cerrarSesionTitle{
         cursor: pointer;
-        color: var(--rojo);
+        color: #F25041;
     }
 }

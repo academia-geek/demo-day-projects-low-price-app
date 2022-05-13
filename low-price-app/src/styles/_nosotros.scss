@@ -1,0 +1,31 @@
+.generalNosotros{
+    display: flex;  
+    margin-left: 15%;
+        margin-right: 15%;
+        margin-top: 8%;
+        font-weight: bold;
+        
+}
+.imgD{
+    max-width: 50%;
+    max-height: 50%;
+    margin-top: 9%;
+}
+.nosotros{
+    background-image: url(../assets/waveMirandoHaciaAbajo.svg);
+    background-repeat: no-repeat; 
+
+}
+.tituloN{
+    font-weight: bold;
+    padding: 1%;
+}
+.p1{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 0%;
+    background-color: var(--amarillo);
+    padding: 2%;
+    border-radius: 3rem;
+    font-weight: bold;
+}

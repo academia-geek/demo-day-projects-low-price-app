@@ -65,7 +65,7 @@ const CrudForm = () => {
         <div className='fondo'>
             
             <form onSubmit={handleSubmit} className="crudForm">
-                <h4>Agregar Estacion</h4>
+                <h4>Agregar Estación</h4>
                 <div>
                     <input type="text" name="name" placeholder="name" value={name} onChange={handleInputChange} />
                     <input type="text" name="description" placeholder="description" value={description} onChange={handleInputChange} />
