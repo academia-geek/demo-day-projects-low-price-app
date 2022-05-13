@@ -48,7 +48,7 @@ const Home = () => {
         <Link to={{
           pathname: '/map',
         }}>Ver mi Ubicación</Link></button>
-        <img alt='' src={carro} width="150px"/>
+        <img className='carro' alt='' src={carro} width="150px"/>
     </section>
   )
 }
