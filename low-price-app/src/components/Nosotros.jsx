@@ -12,14 +12,17 @@ const Nosotros = () => {
         
         <div>
             <img className='imgD' src={Daniel} alt="" />
+            <p>Daniel josé Correa</p>
             <p>Desarrollador Front-End</p>  
         </div>
         <div>
             <img className='imgD'src={Lizeth} alt="" />
+            <p>Lizeth Paola Delgadillo</p>
             <p>Desarrolladora Front-End</p>
         </div>
         <div>
             <img className='imgD'src={Yineth} alt="" />
+            <p>Yineth Paola Duarte</p>
             <p>Desarrolladora Front-End</p>
         </div>
     </div>
