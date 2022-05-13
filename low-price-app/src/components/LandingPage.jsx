@@ -25,20 +25,20 @@ export const LandingPage = () => {
             <header>
                 <div className='logos'>
                     <h2>Low Price App</h2>
-                    <img alt='' src={logo} width="10%" />
+                    <img  className='logo' alt='' src={logo} width="10%" />
                 </div>
                 <Link className='btnR' to="/register">Registrarse</Link>
                 <Link className='btnI' to="/login">Iniciar Sesión</Link>
             </header>
             <main>
                 <div className='flex'>
-                    <img alt='' src={imgMapa} />
+                    <img className='mapa' alt='' src={imgMapa} />
                     <div className='descripcion'>
-                        <h3>Ayudamos a tomar buenas decisiones</h3>
+                        <h3 className='titleLanding'>Ayudamos a tomar buenas decisiones</h3>
                         <p>Fomenta la colaboración y el intercambio de ideas para mejorar la experiencia del usuario. Servicios reales enfocados en el rendimiento del tiempo y el dinero del usuario</p>
                     </div>
                 </div>
-                <p>Todo el mundo quiere ahorrar un poco de dinero a la hora de comprar un producto, nosotros te mostramos las diferentes opciones y tú eliges la mejor alternativa</p>
+                <p className='pLanding'>Todo el mundo quiere ahorrar un poco de dinero a la hora de comprar un producto, nosotros te mostramos las diferentes opciones y tú eliges la mejor alternativa</p>
             </main>
             <section className='sect1'>
                 <h3>¿Como funciona?</h3>

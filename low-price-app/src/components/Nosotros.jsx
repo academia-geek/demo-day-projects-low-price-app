@@ -1,13 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Daniel from '../assets/Daniel.jpeg'
 import Lizeth from '../assets/Lizeth.jpeg'
 import Yineth from '../assets/Yineth.png'
 import estilos from '../styles/_nosotros.scss'
 
 const Nosotros = () => {
+    const navigate = useNavigate()
+
   return (
       <div className='nosotros'>
-   <center><h1 className='tituloN'>Equipo Low Price App</h1></center>
+   <center><h1 onClick={() => navigate('/map')} className='tituloN lowPriceTitle'>Equipo Low Price App</h1></center>
     <div className='generalNosotros'>
         
         <div>
