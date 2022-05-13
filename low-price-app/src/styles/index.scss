@@ -4,6 +4,7 @@
 @import "crudForm";
 @import "favoritos";
 @import "home";
+@import "modalEditar";
 
 :root {
     --rojo: #E72F3E;
@@ -12,5 +13,6 @@
     --amarillo: #f5b531;
     --blanco: #ffffff;
     --azul: #3171ec;
+    --azulClaro: #79c3ea;
     --blancoTransparente: rgba(255, 255, 255, 0.8);
 }
